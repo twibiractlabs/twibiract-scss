@@ -1,0 +1,9 @@
+@mixin nsbanniere($nom, $fichier, $version: 1.1.1, $post: css) {
+    @if ($post == css){
+        /*!
+          * #{$nom}-#{$fichier} v#{$version} (https://#{$nom}#{$fichier}.com/)
+          * Copyright 2024 Inspirer de bootstrap, tailwindcss, shadcdn-ui.
+          * Licensed under MIT (https://github.com/twibiractlabs/twibiract-scss/blob/main/LICENSE)
+         */ 
+    }
+}
