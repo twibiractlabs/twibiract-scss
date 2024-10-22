@@ -5,6 +5,11 @@
 
 // Color system
 
+$noire-blanc: (
+    noire: #000000,
+    blanc: #ffffff,
+) !default;
+
 $ardoises: (
     ardoise-50:  #f8fafc,
     ardoise-100: #f1f5f9,
@@ -313,6 +318,10 @@ $roses: (
     rose-950: #4c0519,
 ) !default;
 
+$noire-blanc-rgb: carte-deBoucle(
+    $noire-blanc, en-rgb, "$value"
+) !default;
+
 $ardoises-rgb: carte-deBoucle(
     $ardoises, en-rgb, "$value"
 ) !default;
@@ -401,14 +410,14 @@ $roses-rgb: carte-deBoucle(
 ) !default;
 
 $carte-fusion-couleurs: carte-fusion-multiple(
-    $ardoises, $grises, $zincs, $neutres, $pierres, $rouges,
+    $noire-blanc, $ardoises, $grises, $zincs, $neutres, $pierres, $rouges,
     $oranges, $ambres, $jaunes, $citrons, $verts, $emeraudes,
     $sarcelles, $cyans, $ciels, $bleus, $indigos, $purples,
     $violets, $fuchsias, $pinks, $roses
 ) !default;
 
 $carte-fusion-couleurs-rgb: carte-fusion-multiple(
-    $ardoises-rgb, $grises-rgb, $zincs-rgb, $neutres-rgb, $pierres-rgb, $rouges-rgb,
+    $noire-blanc-rgb, $ardoises-rgb, $grises-rgb, $zincs-rgb, $neutres-rgb, $pierres-rgb, $rouges-rgb,
     $oranges-rgb, $ambres-rgb, $jaunes-rgb, $citrons-rgb, $verts-rgb, $emeraudes-rgb,
     $sarcelles-rgb, $cyans-rgb, $ciels-rgb, $bleus-rgb, $indigos-rgb, $purples-rgb,
     $violets-rgb, $fuchsias-rgb, $pinks-rgb, $roses

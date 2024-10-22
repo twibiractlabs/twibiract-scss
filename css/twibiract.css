@@ -5,6 +5,8 @@
  */
 :root,
 [data-bs-theme=light], [data-bs-theme=dark] {
+  --ns-noire: #000000;
+  --ns-blanc: #ffffff;
   --ns-ardoise-50: #f8fafc;
   --ns-ardoise-100: #f1f5f9;
   --ns-ardoise-200: #e2e8f0;
@@ -247,6 +249,8 @@
   --ns-rose-800: #9f1239;
   --ns-rose-900: #881337;
   --ns-rose-950: #4c0519;
+  --ns-noire: 0, 0, 0;
+  --ns-blanc: 255, 255, 255;
   --ns-ardoise-50: 248, 250, 252;
   --ns-ardoise-100: 241, 245, 249;
   --ns-ardoise-200: 226, 232, 240;
