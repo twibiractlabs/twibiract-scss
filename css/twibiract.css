@@ -3,6 +3,10 @@
   * Copyright 2024 Inspirer de bootstrap, tailwindcss, shadcdn-ui.
   * Licensed under MIT (https://github.com/twibiractlabs/twibiract-scss/blob/main/LICENSE)
  */
+[data-bs-theme=dark] {
+  color-scheme: dark;
+}
+
 :root,
 [data-bs-theme=light], [data-bs-theme=dark] {
   --ns-noire: #000000;
@@ -493,8 +497,4 @@
   --ns-rose-800: #9f1239;
   --ns-rose-900: #881337;
   --ns-rose-950: #4c0519;
-}
-
-[data-bs-theme=dark] {
-  color-scheme: dark;
 }

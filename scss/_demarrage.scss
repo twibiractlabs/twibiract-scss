@@ -2,14 +2,20 @@
 [data-bs-theme="light"], [data-bs-theme=dark] {
     // Remarque : les valeurs des variables personnalisées ne prennent en charge que SassScript à l'intérieur de `#{}`.
 
-    // Couleurs
-    //
-    // Génère des palettes pour les couleurs complètes, les gris et les couleurs du thème.
-    @include cartes-couleurs-demarrages();
 }
 
 @if $activer-mode-sombre {
     @include mode-couleur(dark, true){
         color-scheme: dark;
     }
+}
+
+:root,
+[data-bs-theme="light"], [data-bs-theme=dark] {
+    // Remarque : les valeurs des variables personnalisées ne prennent en charge que SassScript à l'intérieur de `#{}`.
+
+    // Couleurs
+    //
+    // Génère des palettes pour les couleurs complètes, les gris et les couleurs du thème.
+    @include cartes-couleurs-demarrages();
 }
