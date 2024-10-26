@@ -1,9 +1,0 @@
-@mixin cartes-couleurs-demarrages(){
-    @each $color, $value in $carte-fusion-couleurs {
-        #{$prefixe}#{$color}: #{$value};
-    }
-
-    @each $color, $value in $carte-fusion-couleurs-rgb {
-        #{$prefixe}#{$color}: #{$value};
-    }
-}

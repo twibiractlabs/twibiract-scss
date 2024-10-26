@@ -1,5 +1,0 @@
-@mixin palette-couleurs($name) {
-    @media (prefers-color-scheme: #{$name}) {
-        @content;
-    }
-}
