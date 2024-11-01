@@ -452,321 +452,270 @@ $utilities: map-merge(
       // responsive: true,
     ),
 
-    // "font-sans-serif": (
-    //   property: font-family,
-    //   class: font,
-    //   values: map-merge(
-    //     (sans:  var(--#{$prefix}font-sans)),
-    //     (serif: var(--#{$prefix}font-serif)),
-    //   ),
-    //   // responsive: true,
-    // ),
+    "font-sans-serif": (
+      property: font-family,
+      class: font,
+      values: map-merge(
+        (sans:  var(--#{$prefix}font-sans)),
+        (serif: var(--#{$prefix}font-serif)),
+      ),
+      // responsive: true,
+    ),
 
-    // "text-xs": (
-    //   class: text,
-    //   property:  font-size, values: (xs: $spacer * .75,), 
-    //   property2: line-height, values2: $spacer,
-    //   // responsive: true,
-    // ),
+    "text-xs": (
+      class: text,
+      property:  font-size, values: (xs: $spacer * .75,), 
+      property2: line-height, values2: $spacer,
+      // responsive: true,
+    ),
 
-    // "text-sm": (
-    //   class: text,
-    //   property:  font-size, values: (sm: $spacer * .875,), 
-    //   property2: line-height, values2: $spacer * 1.25,
-    //   // responsive: true,
-    // ),
+    "text-sm": (
+      class: text,
+      property:  font-size, values: (sm: $spacer * .875,), 
+      property2: line-height, values2: $spacer * 1.25,
+      // responsive: true,
+    ),
 
-    // "text-base": (
-    //   class: text,
-    //   property:  font-size, values: (base: $spacer), 
-    //   property2: line-height, values2: $spacer * 1.5,
-    //   // responsive: true,
-    // ),
+    "text-base": (
+      class: text,
+      property:  font-size, values: (base: $spacer), 
+      property2: line-height, values2: $spacer * 1.5,
+      // responsive: true,
+    ),
 
-    // "text-lg": (
-    //   class: text,
-    //   property:  font-size, values: (lg: $spacer * 1.125), 
-    //   property2: line-height, values2: $spacer * 1.75,
-    //   // responsive: true,
-    // ),
+    "text-lg": (
+      class: text,
+      property:  font-size, values: (lg: $spacer * 1.125), 
+      property2: line-height, values2: $spacer * 1.75,
+      // responsive: true,
+    ),
 
-    // "text-xl": (
-    //   class: text,
-    //   property:  font-size, values: (xl: $spacer * 1.25), 
-    //   property2: line-height, values2: $spacer * 1.75,
-    //   // responsive: true,
-    // ),
+    "text-xl": (
+      class: text,
+      property:  font-size, values: (xl: $spacer * 1.25), 
+      property2: line-height, values2: $spacer * 1.75,
+      // responsive: true,
+    ),
 
-    // "text-2xl": (
-    //   class: text,
-    //   property:  font-size, values: (2xl: $spacer * 1.5), 
-    //   property2: line-height, values2: $spacer * 2,
-    //   // responsive: true,
-    // ),
+    "text-2xl": (
+      class: text,
+      property:  font-size, values: (2xl: $spacer * 1.5), 
+      property2: line-height, values2: $spacer * 2,
+      // responsive: true,
+    ),
 
-    // "text-3xl": (
-    //   class: text,
-    //   property:  font-size, values: (3xl: $spacer * 1.875), 
-    //   property2: line-height, values2: $spacer * 2.25,
-    //   // responsive: true,
-    // ),
+    "text-3xl": (
+      class: text,
+      property:  font-size, values: (3xl: $spacer * 1.875), 
+      property2: line-height, values2: $spacer * 2.25,
+      // responsive: true,
+    ),
 
-    // "text-4xl": (
-    //   class: text,
-    //   property:  font-size, values: (4xl: $spacer * 2.25), 
-    //   property2: line-height, values2: $spacer * 2.5,
-    //   // responsive: true,
-    // ),
+    "text-4xl": (
+      class: text,
+      property:  font-size, values: (4xl: $spacer * 2.25), 
+      property2: line-height, values2: $spacer * 2.5,
+      // responsive: true,
+    ),
 
-    // "text-5xl": (
-    //   class: text,
-    //   property:  font-size, values: (5xl: $spacer * 3), 
-    //   property2: line-height, values2: $spacer * 1,
-    //   // responsive: true,
-    // ),
+    "text-5xl": (
+      class: text,
+      property:  font-size, values: (5xl: $spacer * 3), 
+      property2: line-height, values2: $spacer * 1,
+      // responsive: true,
+    ),
 
-    // "text-6xl": (
-    //   class: text,
-    //   property:  font-size, values: (6xl: $spacer * 3.75), 
-    //   property2: line-height, values2: $spacer * 1,
-    //   // responsive: true,
-    // ),
+    "text-6xl": (
+      class: text,
+      property:  font-size, values: (6xl: $spacer * 3.75), 
+      property2: line-height, values2: $spacer * 1,
+      // responsive: true,
+    ),
 
-    // "text-7xl": (
-    //   class: text,
-    //   property:  font-size, values: (7xl: $spacer * 4.5), 
-    //   property2: line-height, values2: $spacer * 1,
-    //   // responsive: true,
-    // ),
+    "text-7xl": (
+      class: text,
+      property:  font-size, values: (7xl: $spacer * 4.5), 
+      property2: line-height, values2: $spacer * 1,
+      // responsive: true,
+    ),
 
-    // "text-8xl": (
-    //   class: text,
-    //   property:  font-size, values: (8xl: $spacer * 6), 
-    //   property2: line-height, values2: $spacer * 1,
-    //   // responsive: true,
-    // ),
+    "text-8xl": (
+      class: text,
+      property:  font-size, values: (8xl: $spacer * 6), 
+      property2: line-height, values2: $spacer * 1,
+      // responsive: true,
+    ),
 
-    // "text-9xl": (
-    //   class: text,
-    //   property:  font-size, values: (9xl: $spacer * 8), 
-    //   property2: line-height, values2: $spacer * 1,
-    //   // responsive: true,
-    // ),
+    "text-9xl": (
+      class: text,
+      property:  font-size, values: (9xl: $spacer * 8), 
+      property2: line-height, values2: $spacer * 1,
+      // responsive: true,
+    ),
     
-    // "antialiased": (
-    //   class: antialiased,
-    //   property:  -webkit-font-smoothing,  values: (null: antialiased), 
-    //   property2: -moz-osx-font-smoothing, values2: (null: grayscale),
-    // ),
+    "antialiased": (
+      class: antialiased,
+      property:  -webkit-font-smoothing,  values: (null: antialiased), 
+      property2: -moz-osx-font-smoothing, values2: (null: grayscale),
+    ),
 
-    // "subpixel-antialiased": (
-    //   class: subpixel-antialiased,
-    //   property:  -webkit-font-smoothing,   values: (null: auto), 
-    //   property2: -moz-osx-font-smoothing, values2: (null: auto),
-    // ),
+    "subpixel-antialiased": (
+      class: subpixel-antialiased,
+      property:  -webkit-font-smoothing,   values: (null: auto), 
+      property2: -moz-osx-font-smoothing, values2: (null: auto),
+    ),
     
-    // "font-style": (
-    //   property: font-style,
-    //   class: font,
-    //   values: italic normal,
-    // ),
+    "font-style": (
+      property: font-style,
+      class: font,
+      values: italic normal,
+    ),
 
-    // "font-weight": (
-    //   property: font-weight,
-    //   class: font,
-    //   values: (thin: 100, extralight: 200, light: 300, normal:  400, medium:  500, semibold: 600, bold: 700, extrabold: 800, black: 900),
-    //   // responsive: true,
-    // ),
-
-    // "font-variant": (
-    //   property: font-variant-numeric,
-    //   class: null,
-    //   values: (normal-nums: normal, ordinal: ordinal, slashed-zero: slashed-zero, lining-nums: lining-nums, oldstyle-nums: oldstyle-nums, proportional-nums:  proportional-nums, tabular-nums:  tabular-nums, diagonal-fractions: diagonal-fractions, stacked-fractions: stacked-fractions),
-    // ),
-
-    // "letter-spacing": (
-    //   property: letter-spacing,
-    //   class: letter,
-    //   values: (tighter: -.05rem, tight: -0.025em, normal: 0rem, wide: .025rem, wider: .05rem, widest: .1rem),
-    // ),
+    "font-weight": (
+      property: font-weight,
+      class: font,
+      values: (thin: 100, extralight: 200, light: 300, normal:  400, medium:  500, semibold: 600, bold: 700, extrabold: 800, black: 900),
+      // responsive: true,
+    ),
         
-    // "line-clamp-1": (
-    //   class: line-clamp,
-    //   property:  overflow,  values: (1: hidden), 
-    //   property2: display, values2: (null: -webkit-box),
-    //   property3: -webkit-box-orient, values3: (null: vertical),
-    //   property4: -webkit-line-clamp, values4: (null: var(--#{$prefix}line-clamp, 1)),
-    // ),
+    "line-clamp-1": (
+      class: line-clamp,
+      property:  overflow,  values: (1: hidden), 
+      property2: display, values2: (null: -webkit-box),
+      property3: -webkit-box-orient, values3: (null: vertical),
+      property4: -webkit-line-clamp, values4: (null: var(--#{$prefix}line-clamp, 1)),
+    ),
     
-    // "line-clamp-none": (
-    //   class: line-clamp,
-    //   property:  overflow,  values: (none: visible), 
-    //   property2: display, values2: (null: block),
-    //   property3: -webkit-box-orient, values3: (null: horizontal),
-    //   property4: -webkit-line-clamp, values4: (null: none),
-    // ),
+    "line-clamp-none": (
+      class: line-clamp,
+      property:  overflow,  values: (none: visible), 
+      property2: display, values2: (null: block),
+      property3: -webkit-box-orient, values3: (null: horizontal),
+      property4: -webkit-line-clamp, values4: (null: none),
+    ),
     
-    // "line-height": (
-    //   property: line-height,
-    //   class: leading,
-    //   values: (none: 1, "sm, .lh-tight": $line-height-sm, snug: 1.375, 'base, .lh-normal': $line-height-base, relaxed: 1.625, 'lg, .lh-loose': $line-height-lg, 3: $spacer * .75, 4: $spacer *  1, 5: $spacer *  1.25, 6: $spacer *  1.5, 7: $spacer *  1.75, 8: $spacer *  2, 9: $spacer *  2.25, 10: $spacer *  2.5),
-    // ),
-    
-    // "list-style-image": (
-    //   property: list-style-image,
-    //   class: list-image,
-    //   values: (none: none),
-    // ),
+    "line-height": (
+      property: line-height,
+      class: leading,
+      values: (none: 1, "sm, .lh-tight": $line-height-sm, snug: 1.375, 'base, .lh-normal': $line-height-base, relaxed: 1.625, 'lg, .lh-loose': $line-height-lg, 3: $spacer * .75, 4: $spacer *  1, 5: $spacer *  1.25, 6: $spacer *  1.5, 7: $spacer *  1.75, 8: $spacer *  2, 9: $spacer *  2.25, 10: $spacer *  2.5),
+    ),
 
-    // "list-style-position": (
-    //   property: list-style-position,
-    //   class: list,
-    //   values: (inside: inside, outside: outside),
-    // ),
+    "list-style-position": (
+      property: list-style-position,
+      class: list,
+      values: (inside: inside, outside: outside),
+    ),
 
-    // "list-style-type": (
-    //   property: list-style-type,
-    //   class: list,
-    //   values: (none: none, disc: disc, decimal: decimal),
-    // ),
+    "list-style-type": (
+      property: list-style-type,
+      class: list,
+      values: (none: none, disc: disc, decimal: decimal),
+    ),
     
-    // "text-align": (
-    //   property: text-align,
-    //   class: text,
-    //   values: (left: left, center: center, right: right, justify: justify, start: start, end: end),
-    //   // responsive: true,
-    // ),
+    "text-align": (
+      property: text-align,
+      class: text,
+      values: (left: left, center: center, right: right, justify: justify, start: start, end: end),
+      // responsive: true,
+    ),
 
-    // "text-color": (
-    //   property: color,
-    //   css-opac: true,
-    //   class: text,
-    //   local-vars: ("text-opacity": 1),
-    //   css-var: true,
-    //   values: $utilities-text-colors,
-    //   values-css-var: (25: .25, null: 1),
-    // ),
+    "text-color": (
+      property: color,
+      css-opac: true,
+      class: text,
+      local-vars: ("text-opacity": 1),
+      css-var: true,
+      values: $utilities-text-colors,
+      values-css-var: (0: 0, 25: .25, 50: .50, 75: .75, null: 1),
+    ),
     
-    // "text-color-emphasis": (
-    //   property: color,
-    //   class: text,
-    //   values: $utilities-text-emphasis-colors
-    // ),
+    "text-color-emphasis": (
+      property: color,
+      class: text,
+      values: $utilities-text-emphasis-colors
+    ),
 
-    // "text-decoration": (
-    //   property: text-decoration,
-    //   class: decoration,
-    //   // state: hover,
-    //   values: (no-underline: none, underline: underline, overline: overline, line-through: line-through),
-    // ),
+    "text-decoration": (
+      property: text-decoration,
+      class: decoration,
+      // state: hover,
+      values: (no-underline: none, underline: underline, overline: overline, line-through: line-through),
+    ),
 
-    // "text-decoration-color": (
-    //   property: color,
-    //   css-opac: true,
-    //   class: decoration,
-    //   // state: hover,
-    //   local-vars: ("decoration-opacity": 1),
-    //   css-var: true,
-    //   values:  $utilities-decoration-underline,
-    //   values-css-var: (25: .25, null: 1),
-    // ),
+    "text-decoration-color": (
+      property: text-decoration-color,
+      css-opac: true,
+      class: decoration,
+      // state: hover,
+      local-vars: ("decoration-opacity": 1),
+      css-var: true,
+      values:  $utilities-decoration-underline,
+      values-css-var: (0: 0, 25: .25, 50: .50, 75: .75, null: 1),
+    ),
 
-    // "text-decoration-style": (
-    //   property: text-decoration-style,
-    //   class: decoration,
-    //   state: hover,
-    //   values: (solid: solid, double: double, dotted: dotted, dashed: dashed, wavy: wavy),
-    // ),
+    "text-decoration-style": (
+      property: text-decoration-style,
+      class: decoration,
+      // state: hover,
+      values: (solid: solid, double: double, dotted: dotted, dashed: dashed, wavy: wavy),
+    ),
 
-    // "text-decoration-thickness": (
-    //   property: text-decoration-thickness,
-    //   class: decoration,
-    //   // state: hover,
-    //   values: (
-    //     auto: var(--#{$prefix}decoration, auto),
-    //     from-font: var(--#{$prefix}decoration, from-font),
-    //     0: var(--#{$prefix}decoration, 0px),
-    //     1: var(--#{$prefix}decoration, 1px),
-    //     2: var(--#{$prefix}decoration, 2px),
-    //     4: var(--#{$prefix}decoration, 4px),
-    //     8: var(--#{$prefix}decoration, 8px),
-    //   ),
-    // ),
+    "text-decoration-thickness": (
+      property: text-decoration-thickness,
+      class: decoration,
+      // state: hover,
+      values: (
+        auto: auto,
+        from-font: var(--#{$prefix}decoration, from-font),
+        0: 0,
+        1: var(--#{$prefix}decoration, 1px),
+        2: var(--#{$prefix}decoration, 2px),
+        4: var(--#{$prefix}decoration, 4px),
+        8: var(--#{$prefix}decoration, 8px),
+      ),
+    ),
     
-    // "text-underline-offset": (
-    //   property: text-underline-offset,
-    //   class: underline-offset,
-    //   // state: hover,
-    //   values: (
-    //     auto: var(--#{$prefix}underline-offset, auto),
-    //     0: var(--#{$prefix}underline-offset, 0px),
-    //     1: var(--#{$prefix}underline-offset, 1px),
-    //     2: var(--#{$prefix}underline-offset, 2px),
-    //     4: var(--#{$prefix}underline-offset, 4px),
-    //     8: var(--#{$prefix}underline-offset, 8px),
-    //   ),
-    // ),
+    "text-underline-offset": (
+      property: text-underline-offset,
+      class: underline-offset,
+      // state: hover,
+      values: (
+        auto: auto,
+        0: 0,
+        1: var(--#{$prefix}underline-offset, 1px),
+        2: var(--#{$prefix}underline-offset, 2px),
+        4: var(--#{$prefix}underline-offset, 4px),
+        8: var(--#{$prefix}underline-offset, 8px),
+      ),
+    ),
 
-    // "text-transform": (
-    //   property: text-transform,
-    //   class: null,
-    //   values: (uppercase: uppercase, lowercase: lowercase, capitalize: capitalize, normal-case: none),
-    // ),
+    "text-transform": (
+      property: text-transform,
+      class: null,
+      values: (uppercase: uppercase, lowercase: lowercase, capitalize: capitalize, normal-case: none),
+    ),
     
-    // "truncate": (
-    //   class: truncate,
-    //   property: overflow, values: (null: hidden),
-    //   property2: text-overflow, values2: (null: ellipsis),
-    //   property3: white-space, values3: (null: nowrap),
-    // ),
-    
-    // "text-overflow": (
-    //   property: text-overflow,
-    //   class: text,
-    //   values: (ellipsis: ellipsis, clip: clip),
-    // ),
-    
-    // "text-wrap": (
-    //   property: text-wrap,
-    //   class: text,
-    //   values: (wrap: wrap, nowrap: nowrap, balance: balance, pretty: pretty),
-    // ),
-    
-    // "text-indent": (
-    //   property: text-indent,
-    //   class: indent,
-    //   values: (
-    //     0: 0,
-    //     1: var(--#{$prefix}text-indent, $spacer * .25),
-    //     2: var(--#{$prefix}text-indent, $spacer * .5),
-    //     3: var(--#{$prefix}text-indent, $spacer ),  
-    //   ),
-    // ),
+    "truncate": (
+      class: truncate,
+      property: overflow, values: (null: hidden),
+      property2: text-overflow, values2: (null: ellipsis),
+      property3: white-space, values3: (null: nowrap),
+    ),
 
-    // "vertical-align": (
-    //   property: vertical-align,
-    //   class: align,
-    //   values: (baseline: baseline, top: top, middle: middle, bottom: bottom, text-top: text-top, text-bottom: text-bottom, sub: sub, super: super),
-    //   // responsive: true,
-    // ),
+    "vertical-align": (
+      property: vertical-align,
+      class: align,
+      values: (baseline: baseline, top: top, middle: middle, bottom: bottom, text-top: text-top, text-bottom: text-bottom, sub: sub, super: super)
+    ),
     
-    // "white-space": (
-    //   property: white-space,
-    //   class: whiteSpace,
-    //   values: (normal: normal, nowrap: nowrap, pre: pre, pre-line: pre-line, pre-wrap: pre-wrap, break-spaces: break-spaces),
-    // ),
-    
-    // "break-normal": (
-    //   property: word-break overflow-wrap,
-    //   class: break,
-    //   values: normal,
-    // ),
-    
-    // "break-all": (
-    //   property: word-break,
-    //   class: break,
-    //   values: (all: break-all,keep: keep-all),
-    // ),
+    "white-space": (
+      property: white-space,
+      class: whiteSpace,
+      values:  (
+        wrap: normal,
+        nowrap: nowrap,
+      ),
+    ),
 
     // // Utilitaire pour [background] --------------------------
     // // debut-docs-scss [bg-attachment] -----------------------
@@ -790,7 +739,7 @@ $utilities: map-merge(
     //   local-vars: ("bg-opacity": 1),
     //   css-var: true,
     //   values: $utilities-bg-colors,
-    //   values-css-var: (25: .25, null: 1),
+    //   values-css-var: (0: 0, 25: .25, 50: .50, 75: .75, null: 1),
     // ),
 
     // "background-color-emphasis": (
@@ -804,7 +753,7 @@ $utilities: map-merge(
     //     "body-secondary": rgba(var(--#{$prefix}secondary-bg-rgb), var(--#{$prefix}bg-opacity)),
     //     "body-tertiary": rgba(var(--#{$prefix}tertiary-bg-rgb), var(--#{$prefix}bg-opacity)),
     //   ),
-    //   values-css-var: (25: .25, null: 1),
+    //   values-css-var: (0: 0, 25: .25, 50: .50, 75: .75, null: 1),
     // ),
     
     // "subtle-background-color": (
