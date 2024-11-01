@@ -8,19 +8,6 @@ $utilities: map-merge(
     // debut-docs-scss utilitaires ----------------------------
     // debut-docs-scss utils-mise-en-page ---------------------
 
-    "box-decoration": (
-      class: box-decoration,
-      property: box-decoration-break,
-      values: clone slice,
-    ),
-
-    "box": (
-      class: box,
-      property: box-sizing,
-      values: border content,
-      // responsive: true,
-    ),
-
     "display": (
       // responsive: true,
       // print: true,
