@@ -1,36 +1,33 @@
-// Container widths
+// Largeurs des conteneurs
 //
-// Set the container width, and override it for fixed navbars in media queries.
+// Définissez la largeur du conteneur et remplacez-la pour les barres de navigation fixes dans les requêtes multimédias.
 
 @if $enable-container-classes {
-  // Single container class with breakpoint max-widths
+  // Classe de conteneur unique avec des largeurs maximales de point d'arrêt
   .container,
-  // 100% wide container at all breakpoints
+  // Conteneur-fluid 100 % large à tous les points d'arrêt
   .container-fluid {
     @include make-container();
   }
 
-  // Responsive containers that are 100% wide until a breakpoint
+  // Conteneurs réactifs qui sont 100 % larges jusqu'à un point d'arrêt
   @each $breakpoint, $container-max-width in $container-max-widths {
-    .container-#{$breakpoint} {
-      @extend .container-fluid;
-    }
 
     @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
       %responsive-container-#{$breakpoint} {
         max-width: $container-max-width;
       }
 
-      // Extend each breakpoint which is smaller or equal to the current breakpoint
+      // Étendez chaque point d'arrêt qui est plus petit ou égal au point d'arrêt actuel
       $extend-breakpoint: true;
 
       @each $name, $width in $grid-breakpoints {
-        @if ($extend-breakpoint) {
-          .container#{breakpoint-infix($name, $grid-breakpoints)} {
+        @if ($breakpoint == $name) {
+          .#{breakpoint-infix($name, $grid-breakpoints)}container, .container-fluid {
             @extend %responsive-container-#{$breakpoint};
           }
 
-          // Once the current breakpoint is reached, stop extending
+          // Une fois le point d'arrêt actuel atteint, arrêtez l'extension
           @if ($breakpoint == $name) {
             $extend-breakpoint: false;
           }

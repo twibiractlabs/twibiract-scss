@@ -169,6 +169,8 @@ $utilities-border-subtle: (
 
 $utilities-links-underline: map-loop($utilities-colors, rgba-css-var, "$key", "link-underline") !default;
 
+$utilities-decoration-underline: map-loop($utilities-colors, rgba-css-var, "$key", "decoration") !default;
+
 $negative-spacers: if($enable-negative-margins, negativify-map($spacers), null) !default;
 
 $gutters: $spacers !default;

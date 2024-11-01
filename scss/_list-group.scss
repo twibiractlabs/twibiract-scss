@@ -123,7 +123,7 @@
   @include media-breakpoint-up($breakpoint) {
     $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
 
-    .list-group-horizontal#{$infix} {
+    .#{$infix}list-group-horizontal {
       flex-direction: row;
 
       > .list-group-item {

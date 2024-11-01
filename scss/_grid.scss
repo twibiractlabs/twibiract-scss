@@ -1,6 +1,6 @@
-// Row
+// Ligne
 //
-// Rows contain your columns.
+// Les lignes contiennent vos colonnes.
 
 :root {
   @each $name, $value in $grid-breakpoints {
@@ -30,9 +30,9 @@
 }
 
 
-// Columns
-//
-// Common styles for small and large grid columns
+// Colonnes
+
+// Styles communs pour les petites et grandes colonnes de grille
 
 @if $enable-grid-classes {
   @include make-grid-columns();

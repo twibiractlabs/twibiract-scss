@@ -89,7 +89,7 @@
   @include media-breakpoint-up($breakpoint) {
     $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
 
-    .dropdown-menu#{$infix}-start {
+    .#{$infix}dropdown-menu-start {
       --bs-position: start;
 
       &[data-bs-popper] {
@@ -98,7 +98,7 @@
       }
     }
 
-    .dropdown-menu#{$infix}-end {
+    .#{$infix}dropdown-menu-end {
       --bs-position: end;
 
       &[data-bs-popper] {
