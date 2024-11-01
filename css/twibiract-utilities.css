@@ -2491,3 +2491,16 @@
 .whiteSpace-nowrap {
   white-space: nowrap !important;
 }
+
+.break-normal {
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+}
+
+.break-all {
+  word-break: break-all !important;
+}
+
+.break-keep {
+  word-break: keep-all !important;
+}

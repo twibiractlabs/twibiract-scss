@@ -703,6 +703,20 @@ $utilities: map-merge(
         nowrap: nowrap,
       ),
     ),
+    
+    "break-normal": (
+      property: word-break overflow-wrap,
+      class: break,
+      values: normal,
+      // responsive: true,
+    ),
+    
+    "break-all": (
+      property: word-break,
+      class: break,
+      values: (all: break-all,keep: keep-all),
+      // responsive: true,
+    ),
 
     // // Utilitaire pour [background] --------------------------
     // // debut-docs-scss [bg-attachment] -----------------------
