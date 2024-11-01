@@ -386,32 +386,7 @@
       
       @if map-has-key($utility, gradientsColors) and map-get($utility, gradientsColors) == true { 
 
-        @each $key, $value in $theme-colors{
-
-          @each $key-rgb, $value-rgb in $theme-colors-rgb{
-
-              @if $key == $key-rgb{
-                  
-                  .from-#{$key}{
-                      --#{$prefix}gradient-from: #{$value} var(--#{$prefix}gradient-from-position);
-                      --#{$prefix}gradient-to: rgb(#{$value-rgb}, 0) var(--#{$prefix}gradient-to-position);
-                      --#{$prefix}gradient-stops:  var(--#{$prefix}gradient-from), var(--#{$prefix}gradient-to);
-                  }
-
-                  .via-#{$key}{
-                      --#{$prefix}gradient-to: rgb(#{$value-rgb}, 0)  var(--#{$prefix}gradient-to-position);
-                      --#{$prefix}gradient-stops: var(--#{$prefix}gradient-from), #{$value} var(--#{$prefix}gradient-via-position), var(--#{$prefix}gradient-to);
-                  }
-
-                  .to-#{$key}{
-                      --#{$prefix}gradient-to: #{$value} var(--#{$prefix}gradient-to-position);
-                  }
-                  
-              }
-
-          }
-
-        }
+        @include gradientsColors();
 
       }
       

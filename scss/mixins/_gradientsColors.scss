@@ -1,0 +1,122 @@
+@mixin gradientsColors(){
+    @each $key, $value in $theme-colors{
+
+        @each $key-rgb, $value-rgb in $theme-colors-rgb{
+
+            @if $key == $key-rgb{
+                
+                .from-#{$key}{
+                --#{$prefix}gradient-from: rgb(#{$value-rgb}, var(--#{$prefix}from-opacity, 1)) var(--#{$prefix}gradient-from-position);
+                --#{$prefix}gradient-to: rgb(#{$value-rgb}, var(--#{$prefix}from-to-opacity, 0)) var(--#{$prefix}gradient-to-position);
+                --#{$prefix}gradient-stops:  var(--#{$prefix}gradient-from), var(--#{$prefix}gradient-to);
+                }
+
+                .via-#{$key}{
+                --#{$prefix}gradient-to: rgb(#{$value-rgb}, var(--#{$prefix}via-to-opacity, 0))  var(--#{$prefix}gradient-to-position);
+                --#{$prefix}gradient-stops: var(--#{$prefix}gradient-from), rgb(#{$value-rgb}, var(--#{$prefix}via-opacity, 1)) var(--#{$prefix}gradient-via-position), var(--#{$prefix}gradient-to);
+                }
+
+                .to-#{$key}{
+                --#{$prefix}gradient-to: rgb(#{$value-rgb}, var(--#{$prefix}to-opacity, 1)) var(--#{$prefix}gradient-to-position);
+                }
+                
+            }
+
+        }
+
+    }
+
+    @for $i from 1 through 10{
+
+        $class-percentage: #{$i + "0"};
+        $value-percentage: #{$i + "0"} + #{"%"};
+    
+        .from-#{$class-percentage}{
+        --#{$prefix}gradient-from-position: #{$value-percentage};
+        }
+        
+    }
+
+    @for $i from 1 through 10{
+
+        $class-percentage: #{$i + "0"};
+        $value-percentage: #{$i + "0"} + #{"%"};
+    
+        .to-#{$class-percentage}{
+        --#{$prefix}gradient-to-position: #{$value-percentage};
+        }
+        
+    }
+
+    @for $i from 1 through 10{
+
+        $class-percentage: #{$i + "0"};
+        $value-percentage: #{$i + "0"} + #{"%"};
+    
+        .via-#{$class-percentage}{
+            --#{$prefix}gradient-via-position: #{$value-percentage};
+        }
+        
+    }
+
+    @for $i from 1 through 10{
+
+        $class-percentage: #{$i + "0"};
+        $value-percentage: #{$i + "0"} + #{"%"};
+
+        .from-to-opacity-#{$class-percentage}{
+            
+            @if ($i == 10){
+                --#{$prefix}from-to-opacity: 1;
+            }@else{
+                --#{$prefix}from-to-opacity: #{"."+ $i};
+            }
+        }
+        
+    }
+
+    @for $i from 1 through 10{
+
+        $class-percentage: #{$i + "0"};
+        $value-percentage: #{$i + "0"} + #{"%"};
+
+        .from-opacity-#{$class-percentage}{
+            @if ($i == 10){
+                --#{$prefix}from-opacity: 1;
+            }@else{
+                --#{$prefix}from-opacity: #{"."+ $i};
+            }
+        }
+        
+    }
+
+    @for $i from 1 through 10{
+
+        $class-percentage: #{$i + "0"};
+        $value-percentage: #{$i + "0"} + #{"%"};
+
+        .to-opacity-#{$class-percentage}{
+            @if ($i == 10){
+                --#{$prefix}to-opacity: 1;
+            }@else{
+                --#{$prefix}to-opacity: #{"."+ $i};
+            }
+        }
+        
+    }  
+
+    @for $i from 1 through 10{
+
+        $class-percentage: #{$i + "0"};
+        $value-percentage: #{$i + "0"} + #{"%"};
+
+        .via-opacity-#{$class-percentage}{
+            @if ($i == 10){
+                --#{$prefix}via-opacity: 1;
+            }@else{
+                --#{$prefix}via-opacity: #{"."+ $i};
+            }
+        }
+        
+    }
+}

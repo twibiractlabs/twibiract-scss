@@ -5,485 +5,452 @@ $utilities: () !default;
 $utilities: map-merge(
   (
 
-    // "box-decoration": (
-    //   class: box-decoration,
-    //   property: box-decoration-break,
-    //   values: clone slice,
-    // ),
+    // debut-docs-scss utilitaires ----------------------------
+    // debut-docs-scss utils-mise-en-page ---------------------
 
-    // "box": (
-    //   class: box,
-    //   property: box-sizing,
-    //   values: border content,
-    // ),
+    "box-decoration": (
+      class: box-decoration,
+      property: box-decoration-break,
+      values: clone slice,
+    ),
 
-    // "display": (
-    //   // responsive: true,
-    //   // print: true,
-    //   class: null,
-    //   property: display,
-    //   values: (
-    //     block: block, inline-block: inline-block, inline: inline, flex: flex, inline-flex: inline-flex, table: table, table-row: table-row, grid: grid, inline-grid: inline-grid, none: none
-    //   )
-    // ),
+    "box": (
+      class: box,
+      property: box-sizing,
+      values: border content,
+      // responsive: true,
+    ),
 
-    // "float": (
-    //   // responsive: true,
-    //   class:    float,
-    //   property: float,
-    //   values: inline-start inline-end right left none,
-    // ),
+    "display": (
+      // responsive: true,
+      // print: true,
+      class: null,
+      property: display,
+      values: (
+        block: block, inline-block: inline-block, inline: inline, flex: flex, inline-flex: inline-flex, table: table, table-row: table-row, grid: grid, inline-grid: inline-grid, none: none
+      )
+    ),
 
-    // "object-fit": (
-    //   property: object-fit,
-    //   class: object,
-    //   values: (contain: contain, cover: cover, fill: fill, none: none, scale-down: scale-down),
-    // ),
+    "float": (
+      class: float,
+      property: float,
+      values: inline-start inline-end right left none,
+      // responsive: true,
+    ),
 
-    // "object-position": (
-    //   property: object-position,
-    //   class: object,
-    //   values: ( bottom: bottom, center: center, left: left, left-bottom: left bottom, left-top: left top, right: right, right-bottom: right bottom, right-top: right top, top: top),
-    // ),
+    "clear": (
+      property: clear,
+      class: clear,
+      values: (start: inline-start, end: inline-end, right: right, left: left, both: both, none: none),
+    ),
 
-    // "overflow": (
-    //   property: overflow,
-    //   class: overflow,
-    //   values: ( auto: auto, hidden: hidden, clip: clip, visible: visible, scroll: scroll),
-    // ),
+    "object-fit": (
+      property: object-fit,
+      class: object,
+      values: (contain: contain, cover: cover, fill: fill, none: none, scale-down: scale-down),
+    ),
 
-    // "overflow-x": (
-    //   property: overflow-x,
-    //   class: overflow-x,
-    //   values: ( auto: auto, hidden: hidden, clip: clip, visible: visible, scroll: scroll),
-    // ),
+    "object-position": (
+      property: object-position,
+      class: object,
+      values: ( bottom: bottom, center: center, left: left, left-bottom: left bottom, left-top: left top, right: right, right-bottom: right bottom, right-top: right top, top: top),
+    ),
 
-    // "overflow-y": (
-    //   property: overflow-y,
-    //   class: overflow-y,
-    //   values: ( auto: auto, hidden: hidden, clip: clip, visible: visible, scroll: scroll),
-    // ),
+    "overflow": (
+      property: overflow,
+      class: overflow,
+      values: ( auto: auto, hidden: hidden, clip: clip, visible: visible, scroll: scroll),
+      // responsive: true,
+    ),
 
-    // "overscroll": (
-    //   property: overscroll-behavior,
-    //   class: overscroll,
-    //   values: (auto: auto, contain: contain, none: none),
-    // ),
+    "overflow-x": (
+      property: overflow-x,
+      class: overflow-x,
+      values: ( auto: auto, hidden: hidden, clip: clip, visible: visible, scroll: scroll),
+      // responsive: true,
+    ),
 
-    // "overscroll-x": (
-    //   property: overscroll-behavior-x,
-    //   class: overscroll-x,
-    //   values: (auto: auto, contain: contain, none: none),
-    // ),
-
-    // "overscroll-y": (
-    //   property: overscroll-behavior-y,
-    //   class: overscroll-y,
-    //   values: (auto: auto, contain: contain, none: none),
-    // ),
+    "overflow-y": (
+      property: overflow-y,
+      class: overflow-y,
+      values: ( auto: auto, hidden: hidden, clip: clip, visible: visible, scroll: scroll),
+      // responsive: true,
+    ),
     
-    // "position": (
-    //   property: position,
-    //   class: null,
-    //   values: (static: static, fixed: fixed, absolute: absolute, relative: relative, sticky: sticky),
-    //   // responsive: true,
-    // ),  
+    "position": (
+      property: position,
+      class: null,
+      values: (static: static, fixed: fixed, absolute: absolute, relative: relative, sticky: sticky),
+      // responsive: true,
+    ),
 
-    // "inset": (
-    //   property: inset,
-    //   class:  inset,
-    //   values: map-merge($spacers, $position-values),
-    //   // responsive: true,
-    // ),
+    "inset": (
+      property: inset,
+      class:  inset,
+      values: (0: var(--#{$prefix}inset, 0), 1: var(--#{$prefix}inset, $spacer * .25), 2: var(--#{$prefix}inset, $spacer * .5), 3: var(--#{$prefix}inset, $spacer), 4: var(--#{$prefix}inset, $spacer * 1.5), 5: var(--#{$prefix}inset, $spacer * 3)),
+      // responsive: true,
+    ),
     
-    // "inset-x": (
-    //   property: right left,
-    //   class:  inset-x,
-    //   values: map-merge($spacers, $position-values),
-    //   // responsive: true,
-    // ),
+    "inset-x": (
+      property: right left,
+      class:  inset-x,
+      values: (0: var(--#{$prefix}inset-x, 0), 1: var(--#{$prefix}inset-x, $spacer * .25), 2: var(--#{$prefix}inset-x, $spacer * .5), 3: var(--#{$prefix}inset-x, $spacer), 4: var(--#{$prefix}inset-x, $spacer * 1.5), 5: var(--#{$prefix}inset-x, $spacer * 3)),
+      // responsive: true,
+    ),
     
-    // "inset-y": (
-    //   property: bottom top,
-    //   class:  inset-y,
-    //   values: map-merge($spacers, $position-values),
-    //   // responsive: true,
-    // ),
+    "inset-y": (
+      property: bottom top,
+      class:  inset-y,
+      values: (0: var(--#{$prefix}inset-y, 0), 1: var(--#{$prefix}inset-y, $spacer * .25), 2: var(--#{$prefix}inset-y, $spacer * .5), 3: var(--#{$prefix}inset-y, $spacer), 4: var(--#{$prefix}inset-y, $spacer * 1.5), 5: var(--#{$prefix}inset-y, $spacer * 3)),
+      // responsive: true,
+    ),
     
-    // "start": (
-    //   property: inset-inline-start,
-    //   class:  start,
-    //   values: map-merge($spacers, $position-values),
-    //   // responsive: true,
-    // ),
+    "start": (
+      property: inset-inline-start,
+      class:  start,
+      values: (0: var(--#{$prefix}inset-start, 0), 1: var(--#{$prefix}inset-start, $spacer * .25), 2: var(--#{$prefix}inset-start, $spacer * .5), 3: var(--#{$prefix}inset-start, $spacer), 4: var(--#{$prefix}inset-start, $spacer * 1.5), 5: var(--#{$prefix}inset-start, $spacer * 3)),
+      // responsive: true,
+    ),
     
-    // "end": (
-    //   property: inset-inline-end,
-    //   class:  end,
-    //   values: map-merge($spacers, $position-values),
-    //   // responsive: true,
-    // ),
+    "end": (
+      property: inset-inline-end,
+      class:  end,
+      values: (0: var(--#{$prefix}inset-end, 0), 1: var(--#{$prefix}inset-end, $spacer * .25), 2: var(--#{$prefix}inset-end, $spacer * .5), 3: var(--#{$prefix}inset-end, $spacer), 4: var(--#{$prefix}inset-end, $spacer * 1.5), 5: var(--#{$prefix}inset-end, $spacer * 3)),
+      // responsive: true,
+    ),
     
-    // "top": (
-    //   property: top,
-    //   class:  top,
-    //   values: map-merge($spacers, $position-values),
-    //   // responsive: true,
-    // ),
+    "top": (
+      property: top,
+      class:  top,
+      values: (0: var(--#{$prefix}top, 0), 1: var(--#{$prefix}top, $spacer * .25), 2: var(--#{$prefix}top, $spacer * .5), 3: var(--#{$prefix}top, $spacer), 4: var(--#{$prefix}top, $spacer * 1.5), 5: var(--#{$prefix}inset, $spacer * 3)),
+      // responsive: true,
+    ),
     
-    // "right": (
-    //   property: right,
-    //   class:  right,
-    //   values: map-merge($spacers, $position-values),
-    //   // responsive: true,
-    // ),
+    "right": (
+      property: right,
+      class:  right,
+      values: (0: var(--#{$prefix}right, 0), 1: var(--#{$prefix}right, $spacer * .25), 2: var(--#{$prefix}right, $spacer * .5), 3: var(--#{$prefix}right, $spacer), 4: var(--#{$prefix}right, $spacer * 1.5), 5: var(--#{$prefix}right, $spacer * 3)),
+      // responsive: true,
+    ),
     
-    // "bottom": (
-    //   property: bottom,
-    //   class:  bottom,
-    //   values: map-merge($spacers, $position-values),
-    //   // responsive: true,
-    // ),
+    "bottom": (
+      property: bottom,
+      class:  bottom,
+      values: (0: var(--#{$prefix}bottom, 0), 1: var(--#{$prefix}bottom, $spacer * .25), 2: var(--#{$prefix}bottom, $spacer * .5), 3: var(--#{$prefix}bottom, $spacer), 4: var(--#{$prefix}bottom, $spacer * 1.5), 5: var(--#{$prefix}bottom, $spacer * 3)),
+      // responsive: true,
+    ),
     
-    // "left": (
-    //   property: left,
-    //   class:  left,
-    //   values: map-merge($spacers, $position-values),
-    //   // responsive: true,
-    // ),
+    "left": (
+      property: left,
+      class:  left,
+      values: (0: var(--#{$prefix}left, 0), 1: var(--#{$prefix}left, $spacer * .25), 2: var(--#{$prefix}left, $spacer * .5), 3: var(--#{$prefix}left, $spacer), 4: var(--#{$prefix}left, $spacer * 1.5), 5: var(--#{$prefix}left, $spacer * 3)),
+      // responsive: true,
+    ),
 
-    // "translate-middle": (
-    //   property: transform,
-    //   class: translate-middle,
-    //   values: (
-    //     null: translate(-50%, -50%),
-    //     x: translateX(-50%),
-    //     y: translateY(-50%),
-    //   ),
-    // ),
+    "translate-middle": (
+      property: transform,
+      class: translate-middle,
+      values: (
+        null: translate(-50%, -50%),
+        x: translateX(-50%),
+        y: translateY(-50%),
+      ),
+    ),
      
-    // "Visibility": (
-    //   property: Visibility,
-    //   class: null,
-    //   values: (visible: visible, invisible: hidden, Visibility: collapse),
-    //   // responsive: true,
-    // ),
+    "Visibility": (
+      property: Visibility,
+      class: null,
+      values: (visible: visible, invisible: hidden, Visibility: collapse),
+      // responsive: true,
+    ),
 
-    // "z-index": (
-    //   property: z-index,
-    //   class: z,
-    //   values: (auto: auto, 0: 0, n1: -1, 10: 10, 20: 20, 30: 30, 40: 40, 50: 50),
-    // ),
+    "z-index": (
+      property: z-index,
+      class: z,
+      values: (auto: auto, 0: 0, n1: -1, 10: 10, 20: 20, 30: 30, 40: 40, 50: 50),
+    ),
 
-    // // flex
+    // flex
     
-    // "flex-direction": (
-    //   property: flex-direction,
-    //   class: flex,
-    //   values: (row: row, row-reverse: row-reverse, col: column, col-reverse: column-reverse),
-    //   // responsive: true,
-    // ),
+    "flex-direction": (
+      property: flex-direction,
+      class: flex,
+      values: (row: row, row-reverse: row-reverse, col: column, col-reverse: column-reverse),
+      // responsive: true,
+    ),
     
-    // "flex-wrap": (
-    //   property: flex-wrap,
-    //   class: flex,
-    //   values: (wrap: wrap, wrap-reverse: wrap-reverse, nowrap: nowrap),
-    //   // responsive: true,
-    // ),
+    "flex-wrap": (
+      property: flex-wrap,
+      class: flex,
+      values: (wrap: wrap, wrap-reverse: wrap-reverse, nowrap: nowrap),
+      // responsive: true,
+    ),
     
-    // "flex": (
-    //   property: flex,
-    //   class: flex,
-    //   values: (1: 1 1 0%, auto: 1 1 auto, initial: 0 1 auto, none: none),
-    //   // responsive: true,
-    // ),
+    "flex": (
+      property: flex,
+      class: flex,
+      values: (1: 1 1 0%, auto: 1 1 auto, initial: 0 1 auto, none: none),
+      // responsive: true,
+    ),
     
-    // "flex-grow": (
-    //   property: flex-grow,
-    //   class: flex-grow,
-    //   values: (0: 0, null: 1),
-    //   // responsive: true,
-    // ),
+    "flex-grow": (
+      property: flex-grow,
+      class: flex-grow,
+      values: (0: 0, null: 1),
+      // responsive: true,
+    ),
     
-    // "flex-shrink": (
-    //   property: flex-shrink,
-    //   class: flex-shrink,
-    //   values: (0: 0, null: 1),
-    //   // responsive: true,
-    // ),
+    "flex-shrink": (
+      property: flex-shrink,
+      class: flex-shrink,
+      values: (0: 0, null: 1),
+      // responsive: true,
+    ),
 
-    // "justify-content": (
-    //   property: justify-content,
-    //   class: justify,
-    //   values: (normal: normal, start: flex-start, end: flex-end, center: center, between: space-between, around: space-around, evenly: space-evenly, stretch: stretch),
-    //   // responsive: true,
-    // ),
+    "justify-content": (
+      property: justify-content,
+      class: justify,
+      values: (normal: normal, start: flex-start, end: flex-end, center: center, between: space-between, around: space-around, evenly: space-evenly, stretch: stretch),
+      // responsive: true,
+    ),
 
-    // "justify-items": (
-    //   property: justify-items,
-    //   class: justify-items,
-    //   values: (start: start, end: end, center: center, stretch: stretch),
-    //   // responsive: true,
-    // ),
+    "justify-items": (
+      property: justify-items,
+      class: justify-items,
+      values: (start: start, end: end, center: center, stretch: stretch),
+      // responsive: true,
+    ),
 
-    // "justify-self": (
-    //   property: justify-self,
-    //   class: justify-self,
-    //   values: (start: start, end: end, center: center, stretch: stretch, auto: auto),
-    //   // responsive: true,
-    // ),
+    "justify-self": (
+      property: justify-self,
+      class: justify-self,
+      values: (start: start, end: end, center: center, stretch: stretch, auto: auto),
+      // responsive: true,
+    ),
 
-    // "align-content": (
-    //   property: align-content,
-    //   class: content,
-    //   values: (normal: normal, center: center, start: flex-start, end: flex-end, between: space-between, around: space-around, evenly: space-evenly, baseline: baseline, stretch: stretch,),
-    //   // responsive: true,
-    // ),
+    "align-content": (
+      property: align-content,
+      class: content,
+      values: (normal: normal, center: center, start: flex-start, end: flex-end, between: space-between, around: space-around, evenly: space-evenly, baseline: baseline, stretch: stretch,),
+      // responsive: true,
+    ),
 
-    // "align-items": (
-    //   property: align-items,
-    //   class: items,
-    //   values: (start: flex-start, end: flex-end, center: center, baseline: baseline, stretch: stretch),
-    //   // responsive: true,
-    // ),
+    "align-items": (
+      property: align-items,
+      class: items,
+      values: (start: flex-start, end: flex-end, center: center, baseline: baseline, stretch: stretch),
+      // responsive: true,
+    ),
 
-    // "align-self": (
-    //   property: align-self,
-    //   class: self,
-    //   values: (auto: auto, start: flex-start, end: flex-end, center: center, stretch: stretch, baseline: baseline),
-    //   // responsive: true,
-    // ),
+    "align-self": (
+      property: align-self,
+      class: self,
+      values: (auto: auto, start: flex-start, end: flex-end, center: center, stretch: stretch, baseline: baseline),
+      // responsive: true,
+    ),
 
-    // "place-content": (
-    //   property: place-content,
-    //   class: place-content,
-    //   values: (center: center, start: start, end: end, between: space-between, around: space-around, evenly: space-evenly, baseline: baseline, stretch: stretch),
-    //   // responsive: true,
-    // ),
+    "place-content": (
+      property: place-content,
+      class: place-content,
+      values: (center: center, start: start, end: end, between: space-between, around: space-around, evenly: space-evenly, baseline: baseline, stretch: stretch),
+      // responsive: true,
+    ),
 
-    // "place-items": (
-    //   property: place-items,
-    //   class: place-items,
-    //   values: (start: start, end: end, center: center, baseline: baseline, stretch: stretch),
-    //   // responsive: true,
-    // ),
+    "place-items": (
+      property: place-items,
+      class: place-items,
+      values: (start: start, end: end, center: center, baseline: baseline, stretch: stretch),
+      // responsive: true,
+    ),
     
-    // "place-self": (
-    //   property: place-self,
-    //   class: place-self,
-    //   values: (auto: auto, start: start, end: end, center: center, stretch: stretch),
-    //   // responsive: true,
-    // ),
+    "place-self": (
+      property: place-self,
+      class: place-self,
+      values: (auto: auto, start: start, end: end, center: center, stretch: stretch),
+      // responsive: true,
+    ),
 
-    // "padding": (
-    //   property: padding,
-    //   class: p,
-    //   values: $spacers,
-    //   // responsive: true,
-    // ),
+    // Utilitaire pour espacements [padding] [margin] [space]
+    // debut-docs-scss [padding] ----------------------------
+    "padding": (
+      property: padding,
+      class: p,
+      values: (0: 0, 1: var(--#{$prefix}p, $spacer * .25), 2: var(--#{$prefix}p, $spacer * .5), 3: var(--#{$prefix}p, $spacer), 4: var(--#{$prefix}p, $spacer * 1.5), 5: var(--#{$prefix}p, $spacer * 3)),
+      // responsive: true,
+    ),
 
-    // "padding-x": (
-    //   property: padding-right padding-left,
-    //   class: px,
-    //   values: $spacers,
-    //   // responsive: true,
-    // ),
+    "padding-x": (
+      property: padding-right padding-left,
+      class: px,
+      values: (0: 0, 1: var(--#{$prefix}px, $spacer * .25), 2: var(--#{$prefix}px, $spacer * .5), 3: var(--#{$prefix}px, $spacer), 4: var(--#{$prefix}px, $spacer * 1.5), 5: var(--#{$prefix}px, $spacer * 3)),
+      // responsive: true,
+    ),
 
-    // "padding-y": (
-    //   property: padding-top padding-bottom,
-    //   class: py,
-    //   values: $spacers,
-    //   // responsive: true,
-    // ),
+    "padding-y": (
+      property: padding-top padding-bottom,
+      class: py,
+      values: (0: 0, 1: var(--#{$prefix}py, $spacer * .25), 2: var(--#{$prefix}py, $spacer * .5), 3: var(--#{$prefix}py, $spacer), 4: var(--#{$prefix}py, $spacer * 1.5), 5: var(--#{$prefix}py, $spacer * 3)),
+      // responsive: true,
+    ),
 
-    // "padding-top": (
-    //   property: padding-top,
-    //   class: pt,
-    //   values: $spacers,
-    //   // responsive: true,
-    // ),
+    "padding-top": (
+      property: padding-top,
+      class: pt,
+      values: (0: 0, 1: var(--#{$prefix}pt, $spacer * .25), 2: var(--#{$prefix}pt, $spacer * .5), 3: var(--#{$prefix}pt, $spacer), 4: var(--#{$prefix}pt, $spacer * 1.5), 5: var(--#{$prefix}pt, $spacer * 3)),
+      // responsive: true,
+    ),
 
-    // "padding-right": (
-    //   property: padding-right,
-    //   class: pr,
-    //   values: $spacers,
-    //   // responsive: true,
-    // ),
+    "padding-right": (
+      property: padding-right,
+      class: pr,
+      values: (0: 0, 1: var(--#{$prefix}pr, $spacer * .25), 2: var(--#{$prefix}pr, $spacer * .5), 3: var(--#{$prefix}pr, $spacer), 4: var(--#{$prefix}pr, $spacer * 1.5), 5: var(--#{$prefix}pr, $spacer * 3)),
+      // responsive: true,
+    ),
 
-    // "padding-bottom": (
-    //   property: padding-bottom,
-    //   class: pb,
-    //   values: $spacers,
-    //   // responsive: true,
-    // ),
+    "padding-bottom": (
+      property: padding-bottom,
+      class: pb,
+      values: (0: 0, 1: var(--#{$prefix}pb, $spacer * .25), 2: var(--#{$prefix}pb, $spacer * .5), 3: var(--#{$prefix}pb, $spacer), 4: var(--#{$prefix}pb, $spacer * 1.5), 5: var(--#{$prefix}pb, $spacer * 3)),
+      // responsive: true,
+    ),
 
-    // "padding-left": (
-    //   property: padding-left,
-    //   class: pl,
-    //   values: $spacers,
-    //   // responsive: true,
-    // ),
+    "padding-left": (
+      property: padding-left,
+      class: pl,
+      values: (0: 0, 1: var(--#{$prefix}pl, $spacer * .25), 2: var(--#{$prefix}pl, $spacer * .5), 3: var(--#{$prefix}pl, $spacer), 4: var(--#{$prefix}pl, $spacer * 1.5), 5: var(--#{$prefix}pl, $spacer * 3)),
+      // responsive: true,
+    ),
     
-    // // debut-docs-scss [margin]
-    // "margin": (
-    //   property: margin,
-    //   class: m,
-    //   values: map-merge($spacers, (auto: auto)),
-    //   // responsive: true,
-    // ),
+    // debut-docs-scss [margin]
+    "margin": (
+      property: margin,
+      class: m,
+      values: map-merge((auto: auto),(0: 0, 1: var(--#{$prefix}m, $spacer * .25), 2: var(--#{$prefix}m, $spacer * .5), 3: var(--#{$prefix}m, $spacer), 4: var(--#{$prefix}m, $spacer * 1.5), 5: var(--#{$prefix}m, $spacer * 3))),
+      // responsive: true,
+    ),
 
-    // "margin-x": (
-    //   property: margin-right margin-left,
-    //   class: mx,
-    //   values: map-merge($spacers, (auto: auto)),
-    //   // responsive: true,
-    // ),
+    "margin-x": (
+      property: margin-right margin-left,
+      class: mx,
+      values: map-merge((auto: auto),(0: 0, 1: var(--#{$prefix}mx, $spacer * .25), 2: var(--#{$prefix}mx, $spacer * .5), 3: var(--#{$prefix}mx, $spacer), 4: var(--#{$prefix}mx, $spacer * 1.5), 5: var(--#{$prefix}mx, $spacer * 3))),
+      // responsive: true,
+    ),
 
-    // "margin-y": (
-    //   property: margin-top margin-bottom,
-    //   class: my,
-    //   values: map-merge($spacers, (auto: auto)),
-    //   // responsive: true,
-    // ),
+    "margin-y": (
+      property: margin-top margin-bottom,
+      class: my,
+      values: map-merge((auto: auto),(0: 0, 1: var(--#{$prefix}my, $spacer * .25), 2: var(--#{$prefix}my, $spacer * .5), 3: var(--#{$prefix}my, $spacer), 4: var(--#{$prefix}my, $spacer * 1.5), 5: var(--#{$prefix}my, $spacer * 3))),
+      // responsive: true,
+    ),
 
-    // "margin-top": (
-    //   property: margin-top,
-    //   class: mt,
-    //   values: map-merge($spacers, (auto: auto)),
-    //   // responsive: true,
-    // ),
+    "margin-top": (
+      property: margin-top,
+      class: mt,
+      values: map-merge((auto: auto),(0: 0, 1: var(--#{$prefix}mt, $spacer * .25), 2: var(--#{$prefix}mt, $spacer * .5), 3: var(--#{$prefix}mt, $spacer), 4: var(--#{$prefix}mt, $spacer * 1.5), 5: var(--#{$prefix}mt, $spacer * 3))),
+      // responsive: true,
+    ),
 
-    // "margin-right": (
-    //   property: margin-right,
-    //   class: mr,
-    //   values: map-merge($spacers, (auto: auto)),
-    //   // responsive: true,
-    // ),
+    "margin-right": (
+      property: margin-right,
+      class: mr,
+      values: map-merge((auto: auto),(0: 0, 1: var(--#{$prefix}mr, $spacer * .25), 2: var(--#{$prefix}mr, $spacer * .5), 3: var(--#{$prefix}mr, $spacer), 4: var(--#{$prefix}mr, $spacer * 1.5), 5: var(--#{$prefix}mr, $spacer * 3))),
+      // responsive: true,
+    ),
 
-    // "margin-bottom": (
-    //   property: margin-bottom,
-    //   class: mb,
-    //   values: map-merge($spacers, (auto: auto)),
-    //   // responsive: true,
-    // ),
+    "margin-bottom": (
+      property: margin-bottom,
+      class: mb,
+      values: map-merge((auto: auto),(0: 0, 1: var(--#{$prefix}mb, $spacer * .25), 2: var(--#{$prefix}mb, $spacer * .5), 3: var(--#{$prefix}mb, $spacer), 4: var(--#{$prefix}mb, $spacer * 1.5), 5: var(--#{$prefix}mb, $spacer * 3))),
+      // responsive: true,
+    ),
 
-    // "margin-left": (
-    //   property: margin-left,
-    //   class: ml,
-    //   values: map-merge($spacers, (auto: auto)),
-    //   // responsive: true,
-    // ),
-    // // fin-docs-scss [margin]
+    "margin-left": (
+      property: margin-left,
+      class: ml,
+      values: map-merge((auto: auto),(0: 0, 1: var(--#{$prefix}ml, $spacer * .25), 2: var(--#{$prefix}ml, $spacer * .5), 3: var(--#{$prefix}ml, $spacer), 4: var(--#{$prefix}ml, $spacer * 1.5), 5: var(--#{$prefix}ml, $spacer * 3))),
+      // responsive: true,
+    ),
+    // fin-docs-scss [margin]
 
-    // // debut-docs-scss [spaces]
-    // "spaceX": (
-    //   property: margin-right margin-left,
-    //   class: spaceX,
-    //   divide: true,
-    //   values: map-merge($spacers, (auto: auto)),
-    //   // responsive: true,
-    // ),
+    // debut-docs-scss [spaces]
+    "space-x": (
+      property: margin-left,
+      class: space-x,
+      divide: true,
+      values: map-merge((auto: auto),(0: var(--#{$prefix}space-x, 0), 1: var(--#{$prefix}space-x, $spacer * .25), 2: var(--#{$prefix}space-x, $spacer * .5), 3: var(--#{$prefix}space-x, $spacer), 4: var(--#{$prefix}space-x, $spacer * 1.5), 5: var(--#{$prefix}space-x, $spacer * 3))),
+      // responsive: true,
+    ),
 
-    // "spaceY": (
-    //   property: margin-bottom margin-top,
-    //   class: spaceX,
-    //   divide: true,
-    //   values: map-merge($spacers, (auto: auto)),
-    //   // responsive: true,
-    // ),
+    "space-y": (
+      property: margin-top,
+      class: space-y,
+      divide: true,
+      values: map-merge((auto: auto),(0: var(--#{$prefix}space-y, 0), 1: var(--#{$prefix}space-y, $spacer * .25), 2: var(--#{$prefix}space-y, $spacer * .5), 3: var(--#{$prefix}space-y, $spacer), 4: var(--#{$prefix}space-y, $spacer * 1.5), 5: var(--#{$prefix}space-y, $spacer * 3))),
+      // responsive: true,
+    ),
 
-    // "space-top": (
-    //   property: margin-top,
-    //   class: space-t,
-    //   divide: true,
-    //   values: map-merge($spacers, (auto: auto)),
-    //   // responsive: true,
-    // ),
+    // Utilitaire pour width et height ------------------------
+    // debut-docs-scss [width] --------------------------------
+    "width": (
+      property: width,
+      class: w,
+      values: map-merge-multiple(
+        (auto: auto), (0: var(--#{$prefix}w, 0), 1: var(--#{$prefix}w, $spacer * .25), 2: var(--#{$prefix}w, $spacer * .5), 3: var(--#{$prefix}w, $spacer), 4: var(--#{$prefix}w, $spacer * 1.5), 5: var(--#{$prefix}w, $spacer * 3)), (screen: 100vw, svw: 100svw, lvw: 100lvw, dvw: 100dvw, min: min-content, max: max-content, fit: fit-content)
+      ),
+      // responsive: true,
+    ),
 
-    // "space-right": (
-    //   property: margin-right,
-    //   class: space-r,
-    //   divide: true,
-    //   values: map-merge($spacers, (auto: auto)),
-    //   // responsive: true,
-    // ),
+    "min-width": (
+      property: min-width,
+      class: min-w,
+      values: map-merge-multiple((0: var(--#{$prefix}min-w, 0), 1: var(--#{$prefix}min-w, $spacer * .25), 2: var(--#{$prefix}min-w, $spacer * .5), 3: var(--#{$prefix}min-w, $spacer), 4: var(--#{$prefix}min-w, $spacer * 1.5), 5: var(--#{$prefix}min-w, $spacer * 3)), (min: min-content, max: max-content, fit: fit-content)),
+      // responsive: true,
+    ),
 
-    // "space-bottom": (
-    //   property: margin-bottom,
-    //   class: space-b,
-    //   divide: true,
-    //   values: map-merge($spacers, (auto: auto)),
-    //   // responsive: true,
-    // ),
-
-    // "space-left": (
-    //   property: margin-left,
-    //   class: space-l,
-    //   divide: true,
-    //   values: map-merge($spacers, (auto: auto)),
-    //   // responsive: true,
-    // ),
-
-    // // Utilitaire pour width et height ------------------------
-    // // debut-docs-scss [width] --------------------------------
-    // "width": (
-    //   property: width,
-    //   class: w,
-    //   values: map-merge-multiple((auto: auto), $spacers, $position-values, (screen: 100vw, svw: 100svw, lvw: 100lvw, dvw: 100dvw, min: min-content, max: max-content, fit: fit-content)),
-    //   // responsive: true,
-    // ),
-
-    // "min-width": (
-    //   property: min-width,
-    //   class: min-w,
-    //   values: map-merge-multiple($spacers, (min: min-content, max: max-content, fit: fit-content)),
-    //   // responsive: true,
-    // ),
-
-    // "max-width": (
-    //   property: max-width,
-    //   class: max-w,
-    //   values: map-merge-multiple($spacers, (min: min-content, max: max-content, fit: fit-content, prose: 65ch, screen-sm: 576px, screen-md: 768px, screen-lg: 1024px, screen-xl: 1280px, screen-2xl: 1536px)),
-    //   // responsive: true,
-    // ),
+    "max-width": (
+      property: max-width,
+      class: max-w,
+      values: map-merge-multiple((0: var(--#{$prefix}max-w, 0), 1: var(--#{$prefix}max-w, $spacer * .25), 2: var(--#{$prefix}max-w, $spacer * .5), 3: var(--#{$prefix}max-w, $spacer), 4: var(--#{$prefix}max-w, $spacer * 1.5), 5: var(--#{$prefix}max-w, $spacer * 3)), (min: min-content, max: max-content, fit: fit-content, prose: 65ch, screen-sm: 576px, screen-md: 768px, screen-lg: 1024px, screen-xl: 1280px, screen-2xl: 1536px)),
+      // responsive: true,
+    ),
     
-    // "height": (
-    //   property: height,
-    //   class: h,
-    //   values: map-merge-multiple((auto: auto), $spacers, $position-values, (screen: 100vh, svh: 100svh, lvh: 100lvh, dvh: 100dvh, min: min-content, max: max-content, fit: fit-content)),
-    //   // responsive: true,
-    // ),
+    "height": (
+      property: height,
+      class: h,
+      values: map-merge-multiple((auto: auto), (0: var(--#{$prefix}h, 0), 1: var(--#{$prefix}h, $spacer * .25), 2: var(--#{$prefix}h, $spacer * .5), 3: var(--#{$prefix}h, $spacer), 4: var(--#{$prefix}h, $spacer * 1.5), 5: var(--#{$prefix}h, $spacer * 3)), (screen: 100vh, svh: 100svh, lvh: 100lvh, dvh: 100dvh, min: min-content, max: max-content, fit: fit-content)),
+      // responsive: true,
+    ),
     
-    // "min-height": (
-    //   property: min-height,
-    //   class: min-h,
-    //   values: map-merge-multiple($spacers, (screen: 100vh, svh: 100svh, lvh: 100lvh, dvh: 100dvh, min: min-content, max: max-content, fit: fit-content)),
-    //   // responsive: true,
-    // ),
+    "min-height": (
+      property: min-height,
+      class: min-h,
+      values: map-merge-multiple((0: var(--#{$prefix}min-h, 0), 1: var(--#{$prefix}min-h, $spacer * .25), 2: var(--#{$prefix}min-h, $spacer * .5), 3: var(--#{$prefix}min-h, $spacer), 4: var(--#{$prefix}min-h, $spacer * 1.5), 5: var(--#{$prefix}min-h, $spacer * 3)), (screen: 100vh, svh: 100svh, lvh: 100lvh, dvh: 100dvh, min: min-content, max: max-content, fit: fit-content)),
+      // responsive: true,
+    ),
     
-    // "max-height": (
-    //   property: max-height,
-    //   class: max-h,
-    //   values: map-merge-multiple($spacers, (screen: 100vh, svh: 100svh, lvh: 100lvh, dvh: 100dvh, min: min-content, max: max-content, fit: fit-content)),
-    //   // responsive: true,
-    // ),
+    "max-height": (
+      property: max-height,
+      class: max-h,
+      values: map-merge-multiple((0: var(--#{$prefix}max-h, 0), 1: var(--#{$prefix}max-h, $spacer * .25), 2: var(--#{$prefix}max-h, $spacer * .5), 3: var(--#{$prefix}max-h, $spacer), 4: var(--#{$prefix}max-h, $spacer * 1.5), 5: var(--#{$prefix}max-h, $spacer * 3)), (screen: 100vh, svh: 100svh, lvh: 100lvh, dvh: 100dvh, min: min-content, max: max-content, fit: fit-content)),
+      // responsive: true,
+    ),
     
-    // "tailles": (
-    //   property: height width,
-    //   class: size,
-    //   values: map-merge-multiple($spacers, $position-values, (min: min-content, max: max-content, fit: fit-content)),
-    //   // responsive: true,
-    // ),
-    // // fin-docs-scss [widths et heights]
+    "tailles": (
+      property: height width,
+      class: size,
+      values: map-merge-multiple((0: var(--#{$prefix}size, 0), 1: var(--#{$prefix}size, $spacer * .25), 2: var(--#{$prefix}size, $spacer * .5), 3: var(--#{$prefix}size, $spacer), 4: var(--#{$prefix}size, $spacer * 1.5), 5: var(--#{$prefix}size, $spacer * 3)), (min: min-content, max: max-content, fit: fit-content)),
+      // responsive: true,
+    ),
+    // fin-docs-scss [widths et heights]
 
-    // // Utilitaire pour typographie --------------------------
-    // // debut-docs-scss [famille police] ---------------------
-    // "font-mono": (
-    //   property: font-family,
-    //   class: font,
-    //   values: (mono: var(--#{$prefix}font-mono)),
-    //   // responsive: true,
-    // ),
+    // Utilitaire pour typographie --------------------------
+    // debut-docs-scss [famille police] ---------------------
+    "font-mono": (
+      property: font-family,
+      class: font,
+      values: (mono: var(--#{$prefix}font-mono)),
+      // responsive: true,
+    ),
 
     // "font-sans-serif": (
     //   property: font-family,
@@ -495,421 +462,401 @@ $utilities: map-merge(
     //   // responsive: true,
     // ),
 
-    "text-xs": (
-      class: text,
-      property:  font-size, values: (xs: $spacer * .75,), 
-      property2: line-height, values2: $spacer,
-      // responsive: true,
-    ),
+    // "text-xs": (
+    //   class: text,
+    //   property:  font-size, values: (xs: $spacer * .75,), 
+    //   property2: line-height, values2: $spacer,
+    //   // responsive: true,
+    // ),
 
-    "text-sm": (
-      class: text,
-      property:  font-size, values: (sm: $spacer * .875,), 
-      property2: line-height, values2: $spacer * 1.25,
-      // responsive: true,
-    ),
+    // "text-sm": (
+    //   class: text,
+    //   property:  font-size, values: (sm: $spacer * .875,), 
+    //   property2: line-height, values2: $spacer * 1.25,
+    //   // responsive: true,
+    // ),
 
-    "text-base": (
-      class: text,
-      property:  font-size, values: (base: $spacer), 
-      property2: line-height, values2: $spacer * 1.5,
-      // responsive: true,
-    ),
+    // "text-base": (
+    //   class: text,
+    //   property:  font-size, values: (base: $spacer), 
+    //   property2: line-height, values2: $spacer * 1.5,
+    //   // responsive: true,
+    // ),
 
-    "text-lg": (
-      class: text,
-      property:  font-size, values: (lg: $spacer * 1.125), 
-      property2: line-height, values2: $spacer * 1.75,
-      // responsive: true,
-    ),
+    // "text-lg": (
+    //   class: text,
+    //   property:  font-size, values: (lg: $spacer * 1.125), 
+    //   property2: line-height, values2: $spacer * 1.75,
+    //   // responsive: true,
+    // ),
 
-    "text-xl": (
-      class: text,
-      property:  font-size, values: (xl: $spacer * 1.25), 
-      property2: line-height, values2: $spacer * 1.75,
-      // responsive: true,
-    ),
+    // "text-xl": (
+    //   class: text,
+    //   property:  font-size, values: (xl: $spacer * 1.25), 
+    //   property2: line-height, values2: $spacer * 1.75,
+    //   // responsive: true,
+    // ),
 
-    "text-2xl": (
-      class: text,
-      property:  font-size, values: (2xl: $spacer * 1.5), 
-      property2: line-height, values2: $spacer * 2,
-      // responsive: true,
-    ),
+    // "text-2xl": (
+    //   class: text,
+    //   property:  font-size, values: (2xl: $spacer * 1.5), 
+    //   property2: line-height, values2: $spacer * 2,
+    //   // responsive: true,
+    // ),
 
-    "text-3xl": (
-      class: text,
-      property:  font-size, values: (3xl: $spacer * 1.875), 
-      property2: line-height, values2: $spacer * 2.25,
-      // responsive: true,
-    ),
+    // "text-3xl": (
+    //   class: text,
+    //   property:  font-size, values: (3xl: $spacer * 1.875), 
+    //   property2: line-height, values2: $spacer * 2.25,
+    //   // responsive: true,
+    // ),
 
-    "text-4xl": (
-      class: text,
-      property:  font-size, values: (4xl: $spacer * 2.25), 
-      property2: line-height, values2: $spacer * 2.5,
-      // responsive: true,
-    ),
+    // "text-4xl": (
+    //   class: text,
+    //   property:  font-size, values: (4xl: $spacer * 2.25), 
+    //   property2: line-height, values2: $spacer * 2.5,
+    //   // responsive: true,
+    // ),
 
-    "text-5xl": (
-      class: text,
-      property:  font-size, values: (5xl: $spacer * 3), 
-      property2: line-height, values2: $spacer * 1,
-      // responsive: true,
-    ),
+    // "text-5xl": (
+    //   class: text,
+    //   property:  font-size, values: (5xl: $spacer * 3), 
+    //   property2: line-height, values2: $spacer * 1,
+    //   // responsive: true,
+    // ),
 
-    "text-6xl": (
-      class: text,
-      property:  font-size, values: (6xl: $spacer * 3.75), 
-      property2: line-height, values2: $spacer * 1,
-      // responsive: true,
-    ),
+    // "text-6xl": (
+    //   class: text,
+    //   property:  font-size, values: (6xl: $spacer * 3.75), 
+    //   property2: line-height, values2: $spacer * 1,
+    //   // responsive: true,
+    // ),
 
-    "text-7xl": (
-      class: text,
-      property:  font-size, values: (7xl: $spacer * 4.5), 
-      property2: line-height, values2: $spacer * 1,
-      // responsive: true,
-    ),
+    // "text-7xl": (
+    //   class: text,
+    //   property:  font-size, values: (7xl: $spacer * 4.5), 
+    //   property2: line-height, values2: $spacer * 1,
+    //   // responsive: true,
+    // ),
 
-    "text-8xl": (
-      class: text,
-      property:  font-size, values: (8xl: $spacer * 6), 
-      property2: line-height, values2: $spacer * 1,
-      // responsive: true,
-    ),
+    // "text-8xl": (
+    //   class: text,
+    //   property:  font-size, values: (8xl: $spacer * 6), 
+    //   property2: line-height, values2: $spacer * 1,
+    //   // responsive: true,
+    // ),
 
-    "text-9xl": (
-      class: text,
-      property:  font-size, values: (9xl: $spacer * 8), 
-      property2: line-height, values2: $spacer * 1,
-      // responsive: true,
-    ),
+    // "text-9xl": (
+    //   class: text,
+    //   property:  font-size, values: (9xl: $spacer * 8), 
+    //   property2: line-height, values2: $spacer * 1,
+    //   // responsive: true,
+    // ),
     
-    "antialiased": (
-      class: antialiased,
-      property:  -webkit-font-smoothing,  values: (null: antialiased), 
-      property2: -moz-osx-font-smoothing, values2: (null: grayscale),
-    ),
+    // "antialiased": (
+    //   class: antialiased,
+    //   property:  -webkit-font-smoothing,  values: (null: antialiased), 
+    //   property2: -moz-osx-font-smoothing, values2: (null: grayscale),
+    // ),
 
-    "subpixel-antialiased": (
-      class: subpixel-antialiased,
-      property:  -webkit-font-smoothing,   values: (null: auto), 
-      property2: -moz-osx-font-smoothing, values2: (null: auto),
-    ),
+    // "subpixel-antialiased": (
+    //   class: subpixel-antialiased,
+    //   property:  -webkit-font-smoothing,   values: (null: auto), 
+    //   property2: -moz-osx-font-smoothing, values2: (null: auto),
+    // ),
     
-    "font-style": (
-      property: font-style,
-      class: font,
-      values: italic normal,
-    ),
+    // "font-style": (
+    //   property: font-style,
+    //   class: font,
+    //   values: italic normal,
+    // ),
 
-    "font-weight": (
-      property: font-weight,
-      class: font,
-      values: (thin: 100, extralight: 200, light: 300, normal:  400, medium:  500, semibold: 600, bold: 700, extrabold: 800, black: 900),
-      // responsive: true,
-    ),
+    // "font-weight": (
+    //   property: font-weight,
+    //   class: font,
+    //   values: (thin: 100, extralight: 200, light: 300, normal:  400, medium:  500, semibold: 600, bold: 700, extrabold: 800, black: 900),
+    //   // responsive: true,
+    // ),
 
-    "font-variant": (
-      property: font-variant-numeric,
-      class: null,
-      values: (normal-nums: normal, ordinal: ordinal, slashed-zero: slashed-zero, lining-nums: lining-nums, oldstyle-nums: oldstyle-nums, proportional-nums:  proportional-nums, tabular-nums:  tabular-nums, diagonal-fractions: diagonal-fractions, stacked-fractions: stacked-fractions),
-    ),
+    // "font-variant": (
+    //   property: font-variant-numeric,
+    //   class: null,
+    //   values: (normal-nums: normal, ordinal: ordinal, slashed-zero: slashed-zero, lining-nums: lining-nums, oldstyle-nums: oldstyle-nums, proportional-nums:  proportional-nums, tabular-nums:  tabular-nums, diagonal-fractions: diagonal-fractions, stacked-fractions: stacked-fractions),
+    // ),
 
-    "letter-spacing": (
-      property: letter-spacing,
-      class: letter,
-      values: (tighter: -.05rem, tight: -0.025em, normal: 0rem, wide: .025rem, wider: .05rem, widest: .1rem),
-    ),
+    // "letter-spacing": (
+    //   property: letter-spacing,
+    //   class: letter,
+    //   values: (tighter: -.05rem, tight: -0.025em, normal: 0rem, wide: .025rem, wider: .05rem, widest: .1rem),
+    // ),
         
-    "line-clamp-1": (
-      class: line-clamp,
-      property:  overflow,  values: (1: hidden), 
-      property2: display, values2: (null: -webkit-box),
-      property3: -webkit-box-orient, values3: (null: vertical),
-      property4: -webkit-line-clamp, values4: (null: var(--#{$prefix}line-clamp, 1)),
-    ),
+    // "line-clamp-1": (
+    //   class: line-clamp,
+    //   property:  overflow,  values: (1: hidden), 
+    //   property2: display, values2: (null: -webkit-box),
+    //   property3: -webkit-box-orient, values3: (null: vertical),
+    //   property4: -webkit-line-clamp, values4: (null: var(--#{$prefix}line-clamp, 1)),
+    // ),
     
-    "line-clamp-none": (
-      class: line-clamp,
-      property:  overflow,  values: (none: visible), 
-      property2: display, values2: (null: block),
-      property3: -webkit-box-orient, values3: (null: horizontal),
-      property4: -webkit-line-clamp, values4: (null: none),
-    ),
+    // "line-clamp-none": (
+    //   class: line-clamp,
+    //   property:  overflow,  values: (none: visible), 
+    //   property2: display, values2: (null: block),
+    //   property3: -webkit-box-orient, values3: (null: horizontal),
+    //   property4: -webkit-line-clamp, values4: (null: none),
+    // ),
     
-    "line-height": (
-      property: line-height,
-      class: leading,
-      values: (none: 1, "sm, .lh-tight": $line-height-sm, snug: 1.375, 'base, .lh-normal': $line-height-base, relaxed: 1.625, 'lg, .lh-loose': $line-height-lg, 3: $spacer * .75, 4: $spacer *  1, 5: $spacer *  1.25, 6: $spacer *  1.5, 7: $spacer *  1.75, 8: $spacer *  2, 9: $spacer *  2.25, 10: $spacer *  2.5),
-    ),
+    // "line-height": (
+    //   property: line-height,
+    //   class: leading,
+    //   values: (none: 1, "sm, .lh-tight": $line-height-sm, snug: 1.375, 'base, .lh-normal': $line-height-base, relaxed: 1.625, 'lg, .lh-loose': $line-height-lg, 3: $spacer * .75, 4: $spacer *  1, 5: $spacer *  1.25, 6: $spacer *  1.5, 7: $spacer *  1.75, 8: $spacer *  2, 9: $spacer *  2.25, 10: $spacer *  2.5),
+    // ),
     
-    "list-style-image": (
-      property: list-style-image,
-      class: list-image,
-      values: (none: none),
-    ),
+    // "list-style-image": (
+    //   property: list-style-image,
+    //   class: list-image,
+    //   values: (none: none),
+    // ),
 
-    "list-style-position": (
-      property: list-style-position,
-      class: list,
-      values: (inside: inside, outside: outside),
-    ),
+    // "list-style-position": (
+    //   property: list-style-position,
+    //   class: list,
+    //   values: (inside: inside, outside: outside),
+    // ),
 
-    "list-style-type": (
-      property: list-style-type,
-      class: list,
-      values: (none: none, disc: disc, decimal: decimal),
-    ),
+    // "list-style-type": (
+    //   property: list-style-type,
+    //   class: list,
+    //   values: (none: none, disc: disc, decimal: decimal),
+    // ),
     
-    "text-align": (
-      property: text-align,
-      class: text,
-      values: (left: left, center: center, right: right, justify: justify, start: start, end: end),
-      // responsive: true,
-    ),
+    // "text-align": (
+    //   property: text-align,
+    //   class: text,
+    //   values: (left: left, center: center, right: right, justify: justify, start: start, end: end),
+    //   // responsive: true,
+    // ),
 
-    "text-color": (
-      property: color,
-      css-opac: true,
-      class: text,
-      local-vars: ("text-opacity": 1),
-      css-var: true,
-      values: $utilities-text-colors,
-      values-css-var: (25: .25, null: 1),
-    ),
+    // "text-color": (
+    //   property: color,
+    //   css-opac: true,
+    //   class: text,
+    //   local-vars: ("text-opacity": 1),
+    //   css-var: true,
+    //   values: $utilities-text-colors,
+    //   values-css-var: (25: .25, null: 1),
+    // ),
     
-    "text-color-emphasis": (
-      property: color,
-      class: text,
-      values: $utilities-text-emphasis-colors
-    ),
+    // "text-color-emphasis": (
+    //   property: color,
+    //   class: text,
+    //   values: $utilities-text-emphasis-colors
+    // ),
 
-    "text-decoration": (
-      property: text-decoration,
-      class: decoration,
-      // state: hover,
-      values: (no-underline: none, underline: underline, overline: overline, line-through: line-through),
-    ),
+    // "text-decoration": (
+    //   property: text-decoration,
+    //   class: decoration,
+    //   // state: hover,
+    //   values: (no-underline: none, underline: underline, overline: overline, line-through: line-through),
+    // ),
 
-    "text-decoration-color": (
-      property: color,
-      css-opac: true,
-      class: decoration,
-      // state: hover,
-      local-vars: ("decoration-opacity": 1),
-      css-var: true,
-      values:  $utilities-decoration-underline,
-      values-css-var: (25: .25, null: 1),
-    ),
+    // "text-decoration-color": (
+    //   property: color,
+    //   css-opac: true,
+    //   class: decoration,
+    //   // state: hover,
+    //   local-vars: ("decoration-opacity": 1),
+    //   css-var: true,
+    //   values:  $utilities-decoration-underline,
+    //   values-css-var: (25: .25, null: 1),
+    // ),
 
-    "text-decoration-style": (
-      property: text-decoration-style,
-      class: decoration,
-      state: hover,
-      values: (solid: solid, double: double, dotted: dotted, dashed: dashed, wavy: wavy),
-    ),
+    // "text-decoration-style": (
+    //   property: text-decoration-style,
+    //   class: decoration,
+    //   state: hover,
+    //   values: (solid: solid, double: double, dotted: dotted, dashed: dashed, wavy: wavy),
+    // ),
 
-    "text-decoration-thickness": (
-      property: text-decoration-thickness,
-      class: decoration,
-      // state: hover,
-      values: (
-        auto: var(--#{$prefix}decoration, auto),
-        from-font: var(--#{$prefix}decoration, from-font),
-        0: var(--#{$prefix}decoration, 0px),
-        1: var(--#{$prefix}decoration, 1px),
-        2: var(--#{$prefix}decoration, 2px),
-        4: var(--#{$prefix}decoration, 4px),
-        8: var(--#{$prefix}decoration, 8px),
-      ),
-    ),
+    // "text-decoration-thickness": (
+    //   property: text-decoration-thickness,
+    //   class: decoration,
+    //   // state: hover,
+    //   values: (
+    //     auto: var(--#{$prefix}decoration, auto),
+    //     from-font: var(--#{$prefix}decoration, from-font),
+    //     0: var(--#{$prefix}decoration, 0px),
+    //     1: var(--#{$prefix}decoration, 1px),
+    //     2: var(--#{$prefix}decoration, 2px),
+    //     4: var(--#{$prefix}decoration, 4px),
+    //     8: var(--#{$prefix}decoration, 8px),
+    //   ),
+    // ),
     
-    "text-underline-offset": (
-      property: text-underline-offset,
-      class: underline-offset,
-      // state: hover,
-      values: (
-        auto: var(--#{$prefix}underline-offset, auto),
-        0: var(--#{$prefix}underline-offset, 0px),
-        1: var(--#{$prefix}underline-offset, 1px),
-        2: var(--#{$prefix}underline-offset, 2px),
-        4: var(--#{$prefix}underline-offset, 4px),
-        8: var(--#{$prefix}underline-offset, 8px),
-      ),
-    ),
+    // "text-underline-offset": (
+    //   property: text-underline-offset,
+    //   class: underline-offset,
+    //   // state: hover,
+    //   values: (
+    //     auto: var(--#{$prefix}underline-offset, auto),
+    //     0: var(--#{$prefix}underline-offset, 0px),
+    //     1: var(--#{$prefix}underline-offset, 1px),
+    //     2: var(--#{$prefix}underline-offset, 2px),
+    //     4: var(--#{$prefix}underline-offset, 4px),
+    //     8: var(--#{$prefix}underline-offset, 8px),
+    //   ),
+    // ),
 
-    "text-transform": (
-      property: text-transform,
-      class: null,
-      values: (uppercase: uppercase, lowercase: lowercase, capitalize: capitalize, normal-case: none),
-    ),
+    // "text-transform": (
+    //   property: text-transform,
+    //   class: null,
+    //   values: (uppercase: uppercase, lowercase: lowercase, capitalize: capitalize, normal-case: none),
+    // ),
     
-    "truncate": (
-      class: truncate,
-      property: overflow, values: (null: hidden),
-      property2: text-overflow, values2: (null: ellipsis),
-      property3: white-space, values3: (null: nowrap),
-    ),
+    // "truncate": (
+    //   class: truncate,
+    //   property: overflow, values: (null: hidden),
+    //   property2: text-overflow, values2: (null: ellipsis),
+    //   property3: white-space, values3: (null: nowrap),
+    // ),
     
-    "text-overflow": (
-      property: text-overflow,
-      class: text,
-      values: (ellipsis: ellipsis, clip: clip),
-    ),
+    // "text-overflow": (
+    //   property: text-overflow,
+    //   class: text,
+    //   values: (ellipsis: ellipsis, clip: clip),
+    // ),
     
-    "text-wrap": (
-      property: text-wrap,
-      class: text,
-      values: (wrap: wrap, nowrap: nowrap, balance: balance, pretty: pretty),
-    ),
+    // "text-wrap": (
+    //   property: text-wrap,
+    //   class: text,
+    //   values: (wrap: wrap, nowrap: nowrap, balance: balance, pretty: pretty),
+    // ),
     
-    "text-indent": (
-      property: text-indent,
-      class: indent,
-      values: (
-        0: 0,
-        1: var(--#{$prefix}text-indent, $spacer * .25),
-        2: var(--#{$prefix}text-indent, $spacer * .5),
-        3: var(--#{$prefix}text-indent, $spacer ),  
-      ),
-    ),
+    // "text-indent": (
+    //   property: text-indent,
+    //   class: indent,
+    //   values: (
+    //     0: 0,
+    //     1: var(--#{$prefix}text-indent, $spacer * .25),
+    //     2: var(--#{$prefix}text-indent, $spacer * .5),
+    //     3: var(--#{$prefix}text-indent, $spacer ),  
+    //   ),
+    // ),
 
-    "vertical-align": (
-      property: vertical-align,
-      class: align,
-      values: (baseline: baseline, top: top, middle: middle, bottom: bottom, text-top: text-top, text-bottom: text-bottom, sub: sub, super: super),
-      // responsive: true,
-    ),
+    // "vertical-align": (
+    //   property: vertical-align,
+    //   class: align,
+    //   values: (baseline: baseline, top: top, middle: middle, bottom: bottom, text-top: text-top, text-bottom: text-bottom, sub: sub, super: super),
+    //   // responsive: true,
+    // ),
     
-    "white-space": (
-      property: white-space,
-      class: whiteSpace,
-      values: (normal: normal, nowrap: nowrap, pre: pre, pre-line: pre-line, pre-wrap: pre-wrap, break-spaces: break-spaces),
-    ),
+    // "white-space": (
+    //   property: white-space,
+    //   class: whiteSpace,
+    //   values: (normal: normal, nowrap: nowrap, pre: pre, pre-line: pre-line, pre-wrap: pre-wrap, break-spaces: break-spaces),
+    // ),
     
-    "break-normal": (
-      property: word-break overflow-wrap,
-      class: break,
-      values: normal,
-    ),
+    // "break-normal": (
+    //   property: word-break overflow-wrap,
+    //   class: break,
+    //   values: normal,
+    // ),
     
-    "break-all": (
-      property: word-break,
-      class: break,
-      values: (all: break-all,keep: keep-all),
-    ),
+    // "break-all": (
+    //   property: word-break,
+    //   class: break,
+    //   values: (all: break-all,keep: keep-all),
+    // ),
 
-    // Utilitaire pour [background] --------------------------
-    // debut-docs-scss [bg-attachment] -----------------------
+    // // Utilitaire pour [background] --------------------------
+    // // debut-docs-scss [bg-attachment] -----------------------
 
-    "background-attachment": (
-      property: background-attachment,
-      class: bg,
-      values: (fixed: fixed, local: local, scroll: scroll),
-    ),
+    // "background-attachment": (
+    //   property: background-attachment,
+    //   class: bg,
+    //   values: (fixed: fixed, local: local, scroll: scroll),
+    // ),
 
-    "background-clip": (
-      property: background-clip,
-      class: bg-clip,
-      values: (border: border-box, padding: padding-box, content: content-box, text: text),
-    ),
+    // "background-clip": (
+    //   property: background-clip,
+    //   class: bg-clip,
+    //   values: (border: border-box, padding: padding-box, content: content-box, text: text),
+    // ),
 
-    "background-color": (
-      property: background-color,
-      css-opac: true,
-      class: bg,
-      local-vars: ("bg-opacity": 1),
-      css-var: true,
-      values: $utilities-bg-colors,
-      values-css-var: (25: .25, null: 1),
-    ),
+    // "background-color": (
+    //   property: background-color,
+    //   css-opac: true,
+    //   class: bg,
+    //   local-vars: ("bg-opacity": 1),
+    //   css-var: true,
+    //   values: $utilities-bg-colors,
+    //   values-css-var: (25: .25, null: 1),
+    // ),
 
-    "background-color-emphasis": (
-      property: background-color,
-      css-opac: true,
-      class: bg,
-      local-vars: ("bg-opacity": 1),
-      css-var: true,
-      values: (
-        "transparent": transparent,
-        "body-secondary": rgba(var(--#{$prefix}secondary-bg-rgb), var(--#{$prefix}bg-opacity)),
-        "body-tertiary": rgba(var(--#{$prefix}tertiary-bg-rgb), var(--#{$prefix}bg-opacity)),
-      ),
-      values-css-var: (25: .25, null: 1),
-    ),
+    // "background-color-emphasis": (
+    //   property: background-color,
+    //   css-opac: true,
+    //   class: bg,
+    //   local-vars: ("bg-opacity": 1),
+    //   css-var: true,
+    //   values: (
+    //     "transparent": transparent,
+    //     "body-secondary": rgba(var(--#{$prefix}secondary-bg-rgb), var(--#{$prefix}bg-opacity)),
+    //     "body-tertiary": rgba(var(--#{$prefix}tertiary-bg-rgb), var(--#{$prefix}bg-opacity)),
+    //   ),
+    //   values-css-var: (25: .25, null: 1),
+    // ),
     
-    "subtle-background-color": (
-      property: background-color,
-      class: bg,
-      values: $utilities-bg-subtle
-    ),
+    // "subtle-background-color": (
+    //   property: background-color,
+    //   class: bg,
+    //   values: $utilities-bg-subtle
+    // ),
     
-    "background-origin": (
-      property: background-origin,
-      class: bg-origin,
-      values: (border: border-box, padding: padding-box, content: content-box),
-    ),
+    // "background-origin": (
+    //   property: background-origin,
+    //   class: bg-origin,
+    //   values: (border: border-box, padding: padding-box, content: content-box),
+    // ),
 
-    "background-position": (
-      property: background-position,
-      class: bg,
-      values: (bottom: bottom, center: center, left: left, left-bottom: left bottom, left-top: left top, right: right, right-bottom: right bottom, right-top: right top, top: top),
-    ),
+    // "background-position": (
+    //   property: background-position,
+    //   class: bg,
+    //   values: (bottom: bottom, center: center, left: left, left-bottom: left bottom, left-top: left top, right: right, right-bottom: right bottom, right-top: right top, top: top),
+    // ),
 
-    "background-repeat": (
-      property: background-repeat,
-      class: bg,
-      values: (repeat: repeat, no-repeat: no-repeat, repeat-x: repeat-x, repeat-y: repeat-y, repeat-round: round, repeat-space: space),
-    ),
+    // "background-repeat": (
+    //   property: background-repeat,
+    //   class: bg,
+    //   values: (repeat: repeat, no-repeat: no-repeat, repeat-x: repeat-x, repeat-y: repeat-y, repeat-round: round, repeat-space: space),
+    // ),
 
-    "background-size": (
-      property: background-size,
-      class: bg,
-      values: (auto: auto, cover: cover, contain: contain),
-    ),
+    // "background-size": (
+    //   property: background-size,
+    //   class: bg,
+    //   values: (auto: auto, cover: cover, contain: contain),
+    // ),
 
-    "background-image": (
-      property: background-image,
-      class: bg,
-      values: (
-        gradient-none: none,
-        gradient-to-t: linear-gradient(to top, var(--#{$prefix}gradient-stops)),
-        gradient-to-tr: linear-gradient(to top right, var(--#{$prefix}gradient-stops)),
-        gradient-to-r: linear-gradient(to right, var(--#{$prefix}gradient-stops)),
-        gradient-to-br: linear-gradient(to bottom right, var(--#{$prefix}gradient-stops)),
-        gradient-to-b: linear-gradient(to bottom, var(--#{$prefix}gradient-stops)),
-        gradient-to-bl: linear-gradient(to bottom left, var(--#{$prefix}gradient-stops)),
-        gradient-to-l: linear-gradient(to left, var(--#{$prefix}gradient-stops)),
-        gradient-to-tl: linear-gradient(to top left, var(--#{$prefix}gradient-stops))
-      )
-    ),  
+    // "background-image": (
+    //   property: background-image,
+    //   class: bg,
+    //   values: (
+    //     gradient-none: none,
+    //     gradient-to-t: linear-gradient(to top, var(--#{$prefix}gradient-stops)),
+    //     gradient-to-tr: linear-gradient(to top right, var(--#{$prefix}gradient-stops)),
+    //     gradient-to-r: linear-gradient(to right, var(--#{$prefix}gradient-stops)),
+    //     gradient-to-br: linear-gradient(to bottom right, var(--#{$prefix}gradient-stops)),
+    //     gradient-to-b: linear-gradient(to bottom, var(--#{$prefix}gradient-stops)),
+    //     gradient-to-bl: linear-gradient(to bottom left, var(--#{$prefix}gradient-stops)),
+    //     gradient-to-l: linear-gradient(to left, var(--#{$prefix}gradient-stops)),
+    //     gradient-to-tl: linear-gradient(to top left, var(--#{$prefix}gradient-stops))
+    //   )
+    // ),  
     
-    "gradientsColors": (
-      gradientsColors: true,
-      values: null,
-    ),
-    
-    "gradient-from-position": (
-      property: --#{$prefix}gradient-from-position,
-      class: from,
-      values: $position-values,
-    ),
-    
-    "gradient-to-position": (
-      property: --#{$prefix}gradient-to-position,
-      class: to,
-      values: $position-values,
-    ),
-    
-    "gradient-via-position": (
-      property: --#{$prefix}gradient-via-position,
-      class: via,
-      values: $position-values,
-    ),
-    
-    
+    // "gradientsColors": (
+    //   gradientsColors: true,
+    //   values: null,
+    // ),
 
   ),
   $utilities
