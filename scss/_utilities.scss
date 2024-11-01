@@ -718,95 +718,94 @@ $utilities: map-merge(
       // responsive: true,
     ),
 
-    // // Utilitaire pour [background] --------------------------
-    // // debut-docs-scss [bg-attachment] -----------------------
+    // Utilitaire pour [background] --------------------------
 
-    // "background-attachment": (
-    //   property: background-attachment,
-    //   class: bg,
-    //   values: (fixed: fixed, local: local, scroll: scroll),
-    // ),
+    "background-attachment": (
+      property: background-attachment,
+      class: bg,
+      values: (fixed: fixed, local: local, scroll: scroll),
+    ),
 
-    // "background-clip": (
-    //   property: background-clip,
-    //   class: bg-clip,
-    //   values: (border: border-box, padding: padding-box, content: content-box, text: text),
-    // ),
+    "background-clip": (
+      property: background-clip,
+      class: bg-clip,
+      values: (border: border-box, padding: padding-box, content: content-box, text: text),
+    ),
 
-    // "background-color": (
-    //   property: background-color,
-    //   css-opac: true,
-    //   class: bg,
-    //   local-vars: ("bg-opacity": 1),
-    //   css-var: true,
-    //   values: $utilities-bg-colors,
-    //   values-css-var: (0: 0, 25: .25, 50: .50, 75: .75, null: 1),
-    // ),
+    "background-color": (
+      property: background-color,
+      css-opac: true,
+      class: bg,
+      local-vars: ("bg-opacity": 1),
+      css-var: true,
+      values: $utilities-bg-colors,
+      values-css-var: (0: 0, 25: .25, 50: .50, 75: .75, null: 1),
+    ),
 
-    // "background-color-emphasis": (
-    //   property: background-color,
-    //   css-opac: true,
-    //   class: bg,
-    //   local-vars: ("bg-opacity": 1),
-    //   css-var: true,
-    //   values: (
-    //     "transparent": transparent,
-    //     "body-secondary": rgba(var(--#{$prefix}secondary-bg-rgb), var(--#{$prefix}bg-opacity)),
-    //     "body-tertiary": rgba(var(--#{$prefix}tertiary-bg-rgb), var(--#{$prefix}bg-opacity)),
-    //   ),
-    //   values-css-var: (0: 0, 25: .25, 50: .50, 75: .75, null: 1),
-    // ),
+    "background-color-emphasis": (
+      property: background-color,
+      css-opac: true,
+      class: bg,
+      local-vars: ("bg-opacity": 1),
+      css-var: true,
+      values: (
+        "transparent": transparent,
+        "body-secondary": rgba(var(--#{$prefix}secondary-bg-rgb), var(--#{$prefix}bg-opacity)),
+        "body-tertiary": rgba(var(--#{$prefix}tertiary-bg-rgb), var(--#{$prefix}bg-opacity)),
+      ),
+      values-css-var: (0: 0, 25: .25, 50: .50, 75: .75, null: 1),
+    ),
     
-    // "subtle-background-color": (
-    //   property: background-color,
-    //   class: bg,
-    //   values: $utilities-bg-subtle
-    // ),
+    "subtle-background-color": (
+      property: background-color,
+      class: bg,
+      values: $utilities-bg-subtle
+    ),
     
-    // "background-origin": (
-    //   property: background-origin,
-    //   class: bg-origin,
-    //   values: (border: border-box, padding: padding-box, content: content-box),
-    // ),
+    "background-origin": (
+      property: background-origin,
+      class: bg-origin,
+      values: (border: border-box, padding: padding-box, content: content-box),
+    ),
 
-    // "background-position": (
-    //   property: background-position,
-    //   class: bg,
-    //   values: (bottom: bottom, center: center, left: left, left-bottom: left bottom, left-top: left top, right: right, right-bottom: right bottom, right-top: right top, top: top),
-    // ),
+    "background-position": (
+      property: background-position,
+      class: bg,
+      values: (bottom: bottom, center: center, left: left, left-bottom: left bottom, left-top: left top, right: right, right-bottom: right bottom, right-top: right top, top: top),
+    ),
 
-    // "background-repeat": (
-    //   property: background-repeat,
-    //   class: bg,
-    //   values: (repeat: repeat, no-repeat: no-repeat, repeat-x: repeat-x, repeat-y: repeat-y, repeat-round: round, repeat-space: space),
-    // ),
+    "background-repeat": (
+      property: background-repeat,
+      class: bg,
+      values: (repeat: repeat, no-repeat: no-repeat, repeat-x: repeat-x, repeat-y: repeat-y, repeat-round: round, repeat-space: space),
+    ),
 
-    // "background-size": (
-    //   property: background-size,
-    //   class: bg,
-    //   values: (auto: auto, cover: cover, contain: contain),
-    // ),
+    "background-size": (
+      property: background-size,
+      class: bg,
+      values: (auto: auto, cover: cover, contain: contain),
+    ),
 
-    // "background-image": (
-    //   property: background-image,
-    //   class: bg,
-    //   values: (
-    //     gradient-none: none,
-    //     gradient-to-t: linear-gradient(to top, var(--#{$prefix}gradient-stops)),
-    //     gradient-to-tr: linear-gradient(to top right, var(--#{$prefix}gradient-stops)),
-    //     gradient-to-r: linear-gradient(to right, var(--#{$prefix}gradient-stops)),
-    //     gradient-to-br: linear-gradient(to bottom right, var(--#{$prefix}gradient-stops)),
-    //     gradient-to-b: linear-gradient(to bottom, var(--#{$prefix}gradient-stops)),
-    //     gradient-to-bl: linear-gradient(to bottom left, var(--#{$prefix}gradient-stops)),
-    //     gradient-to-l: linear-gradient(to left, var(--#{$prefix}gradient-stops)),
-    //     gradient-to-tl: linear-gradient(to top left, var(--#{$prefix}gradient-stops))
-    //   )
-    // ),  
+    "background-image": (
+      property: background-image,
+      class: bg,
+      values: (
+        gradient-none: none,
+        gradient-to-t: linear-gradient(to top, var(--#{$prefix}gradient-stops)),
+        gradient-to-tr: linear-gradient(to top right, var(--#{$prefix}gradient-stops)),
+        gradient-to-r: linear-gradient(to right, var(--#{$prefix}gradient-stops)),
+        gradient-to-br: linear-gradient(to bottom right, var(--#{$prefix}gradient-stops)),
+        gradient-to-b: linear-gradient(to bottom, var(--#{$prefix}gradient-stops)),
+        gradient-to-bl: linear-gradient(to bottom left, var(--#{$prefix}gradient-stops)),
+        gradient-to-l: linear-gradient(to left, var(--#{$prefix}gradient-stops)),
+        gradient-to-tl: linear-gradient(to top left, var(--#{$prefix}gradient-stops))
+      )
+    ),  
     
-    // "gradientsColors": (
-    //   gradientsColors: true,
-    //   values: null,
-    // ),
+    "gradientsColors": (
+      gradientsColors: true,
+      values: null,
+    ),
 
   ),
   $utilities
