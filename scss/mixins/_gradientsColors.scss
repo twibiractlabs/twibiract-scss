@@ -26,97 +26,61 @@
 
     }
 
-    @for $i from 1 through 10{
-
-        $class-percentage: #{$i + "0"};
-        $value-percentage: #{$i + "0"} + #{"%"};
-    
-        .from-#{$class-percentage}{
-        --#{$prefix}gradient-from-position: #{$value-percentage};
+    @each $key, $value in $position-values{
+        .from-#{$key}{
+            --#{$prefix}gradient-from-position: #{$value};
         }
-        
     }
 
-    @for $i from 1 through 10{
-
-        $class-percentage: #{$i + "0"};
-        $value-percentage: #{$i + "0"} + #{"%"};
-    
-        .to-#{$class-percentage}{
-        --#{$prefix}gradient-to-position: #{$value-percentage};
+    @each $key, $value in $position-values{
+        .to-#{$key}{
+            --#{$prefix}gradient-to-position: #{$value};
         }
-        
     }
 
-    @for $i from 1 through 10{
-
-        $class-percentage: #{$i + "0"};
-        $value-percentage: #{$i + "0"} + #{"%"};
-    
-        .via-#{$class-percentage}{
-            --#{$prefix}gradient-via-position: #{$value-percentage};
+    @each $key, $value in $position-values{
+        .via-#{$key}{
+            --#{$prefix}gradient-via-position: #{$value};
         }
-        
     }
 
-    @for $i from 1 through 10{
-
-        $class-percentage: #{$i + "0"};
-        $value-percentage: #{$i + "0"} + #{"%"};
-
-        .from-to-opacity-#{$class-percentage}{
-            
-            @if ($i == 10){
+    @each $key, $value in $position-values{
+        .from-to-opacity-#{$key}{
+            @if ($key == 100){
                 --#{$prefix}from-to-opacity: 1;
             }@else{
-                --#{$prefix}from-to-opacity: #{"."+ $i};
+                --#{$prefix}from-to-opacity: #{"." + $key};
             }
         }
-        
     }
 
-    @for $i from 1 through 10{
-
-        $class-percentage: #{$i + "0"};
-        $value-percentage: #{$i + "0"} + #{"%"};
-
-        .from-opacity-#{$class-percentage}{
-            @if ($i == 10){
+    @each $key, $value in $position-values{
+        .from-opacity-#{$key}{
+            @if ($key == 100){
                 --#{$prefix}from-opacity: 1;
             }@else{
-                --#{$prefix}from-opacity: #{"."+ $i};
+                --#{$prefix}from-opacity: #{"." + $key};
             }
         }
-        
     }
 
-    @for $i from 1 through 10{
-
-        $class-percentage: #{$i + "0"};
-        $value-percentage: #{$i + "0"} + #{"%"};
-
-        .to-opacity-#{$class-percentage}{
-            @if ($i == 10){
+    @each $key, $value in $position-values{
+        .to-opacity-#{$key}{
+            @if ($key == 100){
                 --#{$prefix}to-opacity: 1;
             }@else{
-                --#{$prefix}to-opacity: #{"."+ $i};
+                --#{$prefix}to-opacity: #{"." + $key};
             }
         }
-        
-    }  
+    }
 
-    @for $i from 1 through 10{
-
-        $class-percentage: #{$i + "0"};
-        $value-percentage: #{$i + "0"} + #{"%"};
-
-        .via-opacity-#{$class-percentage}{
-            @if ($i == 10){
+    @each $key, $value in $position-values{
+        .via-opacity-#{$key}{
+            @if ($key == 100){
                 --#{$prefix}via-opacity: 1;
             }@else{
-                --#{$prefix}via-opacity: #{"."+ $i};
+                --#{$prefix}via-opacity: #{"." + $key};
             }
         }
-        
     }
 }
