@@ -109,11 +109,6 @@
   --#{$prefix}border-radius-pill: #{$border-radius-pill};
   // scss-docs-end root-border-var
 
-  --#{$prefix}box-shadow: #{$box-shadow};
-  --#{$prefix}box-shadow-sm: #{$box-shadow-sm};
-  --#{$prefix}box-shadow-lg: #{$box-shadow-lg};
-  --#{$prefix}box-shadow-inset: #{$box-shadow-inset};
-
   // Focus styles
   // scss-docs-start root-focus-variables
   --#{$prefix}focus-ring-width: #{$focus-ring-width};
