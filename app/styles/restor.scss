@@ -1,0 +1,58 @@
+// $utilities: () !default;
+// // stylelint-disable-next-line scss/dollar-variable-default
+// $utilities: map-merge(
+//   (
+
+//     scss-docs-end utils-shadow
+//     // scss-docs-start utils-focus-ring
+//     "focus-ring": (
+//       css-var: true,
+//       css-variable-name: focus-ring-color,
+//       class: focus-ring,
+//       values: map-loop($theme-colors-rgb, rgba-css-var, "$key", "focus-ring")
+//     ),
+//     // scss-docs-end utils-focus-ring
+//     "translate-middle": (
+//       property: transform,
+//       class: translate-middle,
+//       values: (
+//         null: translate(-50%, -50%),
+//         x: translateX(-50%),
+//         y: translateY(-50%),
+//       )
+//     ),
+//     // scss-docs-end utils-position
+
+//     // scss-docs-end utils-borders
+//     // Sizing utilities
+
+//     // Flex utilities
+//     // scss-docs-start utils-flex
+//     // "columns": (
+//     //   class: cols,
+//     //   property: columns,
+//     //   values: map-merge-multiple(
+//     //     (1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8, 9: 9, 10: 10, 11: 11, 12: 12)
+//     //   ),
+//     //   responsive: true,
+//     // ),
+//     // scss-docs-end utils-flex
+
+
+//     // scss-docs-end utils-bg-color
+
+//     // scss-docs-start utils-interaction
+//     "user-select": (
+//       property: user-select,
+//       values: all auto none
+//     ),
+//     "pointer-events": (
+//       property: pointer-events,
+//       class: pe,
+//       values: none auto,
+//     ),
+//     // scss-docs-end utils-interaction
+
+//   ),
+//   $utilities
+// );

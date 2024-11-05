@@ -100,9 +100,10 @@
       }
     }
 
-    $is-css-var: map-get($utility, css-var);
-    $is-local-vars: map-get($utility, local-vars);
-    $is-css-opac: map-get($utility, css-opac);
+    $is-css-var:      map-get($utility, css-var);
+    $is-local-vars:   map-get($utility, local-vars);
+    $is-css-opac:     map-get($utility, css-opac);
+    $add-css-var-map: map-get($utility, addcssVar);
     
     $is-gradientsColors: map-get($utility, gradientsColors);
     
@@ -111,6 +112,40 @@
     @if $value != null {
       @if $is-rtl == false {
         /* rtl:begin:remove */
+      }
+
+      @if $add-css-var-map and $add-css-var-map == map {
+
+        $var-breakpoint: if($infix == "sm\\:", "sm-", if($infix == "md\\:", "md-", if($infix == "lg\\:", "lg-", if($infix == "xl\\:", "xl-", if($infix == "xxl\\:", "xxl-", null)))));
+
+        .#{ $infix + $property-class + $property-class-modifier}#{$property-divide} {
+
+          @each $property in $properties {
+            #{$property}: var(--#{$prefix + $var-breakpoint + $property-class + $property-class-modifier}, $value) if($enable-important-utilities, !important, null);
+          }
+
+          @each $key2, $value2 in $values2{
+            @each $property2 in $properties2 {
+              #{$property2}: $value2 if($enable-important-utilities and $property2, !important, null);
+            }
+          }
+
+        }
+
+        @each $pseudo in $state {
+
+          $statement: if(#{$pseudo} == "after", ":after", if(#{$pseudo} == "before", ":before", #{$pseudo}));
+
+          .#{$infix}#{$pseudo}\:#{ $property-class + $property-class-modifier}:#{$statement}#{$property-divide} {
+
+            @each $property in $properties {
+              #{$property}: var(--#{$prefix  + #{$pseudo+"-"} +  $var-breakpoint + $property-class + $property-class-modifier}, $value) if($enable-important-utilities, !important, null);
+            }
+
+          }
+
+        }
+
       }
 
       @if $is-css-opac and $is-css-opac == true {
@@ -226,151 +261,155 @@
             }
           }
         } @else {
-          
-          .#{ $infix + $property-class + $property-class-modifier}#{$property-divide} {
 
-            @each $property in $properties {
-              @if $is-local-vars {
-                @each $local-var, $variable in $is-local-vars {
-                  --#{$prefix}#{$local-var}: #{$variable};
+          @if $add-css-var-map !=map {
+
+            .#{ $infix + $property-class + $property-class-modifier}#{$property-divide} {
+
+              @each $property in $properties {
+                @if $is-local-vars {
+                  @each $local-var, $variable in $is-local-vars {
+                    --#{$prefix}#{$local-var}: #{$variable};
+                  }
+                }
+                #{$property}: $value if($enable-important-utilities, !important, null);
+              }
+
+              @each $key2, $value2 in $values2{
+                @each $property2 in $properties2 {
+                  #{$property2}: $value2 if($enable-important-utilities and $property2, !important, null);
                 }
               }
-              #{$property}: $value if($enable-important-utilities, !important, null);
-            }
 
-            @each $key2, $value2 in $values2{
-              @each $property2 in $properties2 {
-                #{$property2}: $value2 if($enable-important-utilities and $property2, !important, null);
+              @each $key3, $value3 in $values3{
+                @each $property3 in $properties3 {
+                  #{$property3}: $value3 if($enable-important-utilities and $property3, !important, null);
+                }
               }
-            }
 
-            @each $key3, $value3 in $values3{
-              @each $property3 in $properties3 {
-                #{$property3}: $value3 if($enable-important-utilities and $property3, !important, null);
+              @each $key4, $value4 in $values4{
+                @each $property4 in $properties4 {
+                  #{$property4}: $value4 if($enable-important-utilities and $property4, !important, null);
+                }
               }
-            }
 
-            @each $key4, $value4 in $values4{
-              @each $property4 in $properties4 {
-                #{$property4}: $value4 if($enable-important-utilities and $property4, !important, null);
+              @each $key5, $value5 in $values5{
+                @each $property5 in $properties5 {
+                  #{$property5}: $value5 if($enable-important-utilities and $property5, !important, null);
+                }
               }
-            }
 
-            @each $key5, $value5 in $values5{
-              @each $property5 in $properties5 {
-                #{$property5}: $value5 if($enable-important-utilities and $property5, !important, null);
-              }
             }
-
-          }
-  
-          @each $pseudo in $state {
-            
-            @if $pseudo == after or $pseudo == before{
+    
+            @each $pseudo in $state {
               
-              .#{$infix}#{$pseudo}\:#{ $property-class + $property-class-modifier}::#{$pseudo}#{$property-divide} {
+              @if $pseudo == after or $pseudo == before{
+                
+                .#{$infix}#{$pseudo}\:#{ $property-class + $property-class-modifier}::#{$pseudo}#{$property-divide} {
 
-                @each $property in $properties {
-                  @if $is-local-vars {
-                    @each $local-var, $variable in $is-local-vars {
-                      --#{$prefix}#{$local-var}: #{$variable};
+                  @each $property in $properties {
+                    @if $is-local-vars {
+                      @each $local-var, $variable in $is-local-vars {
+                        --#{$prefix}#{$local-var}: #{$variable};
+                      }
+                    }
+                    #{$property}: $value if($enable-important-utilities, !important, null);
+                  }
+
+                  @each $key2, $value2 in $values2{
+
+                    @each $property2 in $properties2 {
+
+                      #{$property2}: $value2 if($enable-important-utilities and $property2, !important, null);
+
                     }
                   }
-                  #{$property}: $value if($enable-important-utilities, !important, null);
-                }
 
-                @each $key2, $value2 in $values2{
+                  @each $key3, $value3 in $values3{
 
-                  @each $property2 in $properties2 {
+                    @each $property3 in $properties3 {
 
-                    #{$property2}: $value2 if($enable-important-utilities and $property2, !important, null);
+                      #{$property3}: $value3 if($enable-important-utilities and $property3, !important, null);
 
-                  }
-                }
-
-                @each $key3, $value3 in $values3{
-
-                  @each $property3 in $properties3 {
-
-                    #{$property3}: $value3 if($enable-important-utilities and $property3, !important, null);
-
-                  }
-                }
-
-                @each $key4, $value4 in $values4{
-
-                  @each $property4 in $properties4 {
-
-                    #{$property4}: $value4 if($enable-important-utilities and $property4, !important, null);
-
-                  }
-                }
-
-                @each $key5, $value5 in $values5{
-
-                  @each $property5 in $properties5 {
-
-                    #{$property5}: $value5 if($enable-important-utilities and $property5, !important, null);
-
-                  }
-                }
-
-              }
-            }@else{
-              .#{$infix}#{$pseudo}\:#{ $property-class + $property-class-modifier}:#{$pseudo}#{$property-divide} {
-
-                @each $property in $properties {
-                  @if $is-local-vars {
-                    @each $local-var, $variable in $is-local-vars {
-                      --#{$prefix}#{$local-var}: #{$variable};
                     }
                   }
-                  #{$property}: $value if($enable-important-utilities, !important, null);
-                }
 
-                @each $key2, $value2 in $values2{
+                  @each $key4, $value4 in $values4{
 
-                  @each $property2 in $properties2 {
+                    @each $property4 in $properties4 {
 
-                    #{$property2}: $value2 if($enable-important-utilities and $property2, !important, null);
-                    
+                      #{$property4}: $value4 if($enable-important-utilities and $property4, !important, null);
+
+                    }
+                  }
+
+                  @each $key5, $value5 in $values5{
+
+                    @each $property5 in $properties5 {
+
+                      #{$property5}: $value5 if($enable-important-utilities and $property5, !important, null);
+
+                    }
                   }
 
                 }
+              }@else{
+                .#{$infix}#{$pseudo}\:#{ $property-class + $property-class-modifier}:#{$pseudo}#{$property-divide} {
 
-                @each $key3, $value3 in $values3{
+                  @each $property in $properties {
+                    @if $is-local-vars {
+                      @each $local-var, $variable in $is-local-vars {
+                        --#{$prefix}#{$local-var}: #{$variable};
+                      }
+                    }
+                    #{$property}: $value if($enable-important-utilities, !important, null);
+                  }
 
-                  @each $property3 in $properties3 {
+                  @each $key2, $value2 in $values2{
 
-                    #{$property3}: $value3 if($enable-important-utilities and $property3, !important, null);
-                    
+                    @each $property2 in $properties2 {
+
+                      #{$property2}: $value2 if($enable-important-utilities and $property2, !important, null);
+                      
+                    }
+
+                  }
+
+                  @each $key3, $value3 in $values3{
+
+                    @each $property3 in $properties3 {
+
+                      #{$property3}: $value3 if($enable-important-utilities and $property3, !important, null);
+                      
+                    }
+
+                  }
+
+                  @each $key4, $value4 in $values4{
+
+                    @each $property4 in $properties4 {
+
+                      #{$property4}: $value4 if($enable-important-utilities and $property4, !important, null);
+                      
+                    }
+
+                  }
+
+                  @each $key5, $value5 in $values5{
+
+                    @each $property5 in $properties5 {
+
+                      #{$property5}: $value5 if($enable-important-utilities and $property5, !important, null);
+                      
+                    }
+
                   }
 
                 }
-
-                @each $key4, $value4 in $values4{
-
-                  @each $property4 in $properties4 {
-
-                    #{$property4}: $value4 if($enable-important-utilities and $property4, !important, null);
-                    
-                  }
-
-                }
-
-                @each $key5, $value5 in $values5{
-
-                  @each $property5 in $properties5 {
-
-                    #{$property5}: $value5 if($enable-important-utilities and $property5, !important, null);
-                    
-                  }
-
-                }
-
               }
+    
             }
-  
+
           }
           
         }
@@ -383,6 +422,8 @@
     }
 
     @if $value == null {
+
+      // Bg-gradient colors
       
       @if map-has-key($utility, gradientsColors) and map-get($utility, gradientsColors) == true { 
 

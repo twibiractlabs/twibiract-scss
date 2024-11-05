@@ -376,11 +376,11 @@ $enable-reduced-motion:       true !default;
 $enable-smooth-scroll:        true !default;
 $enable-grid-classes:         true !default;
 $enable-container-classes:    true !default;
-$enable-cssgrid:              false !default; // activer
+$enable-cssgrid:              false !default; // desactiver
 $enable-button-pointers:      true !default;
 $enable-rfs:                  true !default;
 $enable-validation-icons:     true !default;
-$enable-negative-margins:     false !default;
+$enable-negative-margins:     true !default; // activer
 $enable-deprecation-messages: true !default;
 $enable-important-utilities:  true !default;
 
@@ -416,6 +416,41 @@ $spacers: (
   4: $spacer * 1.5,
   5: $spacer * 3,
 ) !default;
+// $spacers: (
+//   0: 0,
+//   px: 1px,
+//   0\.5: $spacer * 0.125,
+//   1: $spacer * 0.25,
+//   1\.5: $spacer * 0.375,
+//   2: $spacer * 0.5,
+//   2\.5: $spacer * 0.625,
+//   3: $spacer * 0.75,
+//   3\.5: $spacer * 0.875,
+//   4: $spacer * 1,
+//   5: $spacer * 1.25,
+//   6: $spacer * 1.5,
+//   7: $spacer * 1.75,
+//   8: $spacer * 2,
+//   9: $spacer * 2.25,
+//   10: $spacer * 2.5,
+//   11: $spacer * 2.75,
+//   12: $spacer * 3,
+//   16: $spacer * 4,
+//   20: $spacer * 5,
+//   24: $spacer * 6,
+//   28: $spacer * 7,
+//   32: $spacer * 8,
+//   40: $spacer * 10,
+//   44: $spacer * 11,
+//   48: $spacer * 12,
+//   52: $spacer * 13,
+//   56: $spacer * 14,
+//   60: $spacer * 15,
+//   64: $spacer * 16,
+//   72: $spacer * 18,
+//   80: $spacer * 20,
+//   96: $spacer * 24,
+// ) !default;
 // scss-docs-end spacer-variables-maps
 
 // Position
@@ -1148,8 +1183,9 @@ $zindex-toast:                      1090 !default;
 // scss-docs-start zindex-levels-map
 $zindex-levels: (
   auto: auto,
-  n1: -1,
   0:   0,
+  1:   1,
+  n1: -1,
   10: 10,
   20: 20,
   30: 30,
