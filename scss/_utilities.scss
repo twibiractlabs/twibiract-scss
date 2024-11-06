@@ -1024,7 +1024,7 @@ $utilities: map-merge(
       values: $utilities-border-subtle
     ),
     "border-opacity": (
-      property: --#{$prefix}brd-opacity,
+      property: --#{$prefix}border-opacity,
       state: after before,
       class: brd-opacity,
       values: (10: .1, 25: .25, 50: .5, 75: .75, 100: 1)

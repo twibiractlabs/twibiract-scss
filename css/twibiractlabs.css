@@ -11090,63 +11090,63 @@ textarea.form-control-lg {
 }
 
 .brd-opacity-10 {
-  --ns-brd-opacity: 0.1 !important;
+  --ns-border-opacity: 0.1 !important;
 }
 
 .after\:brd-opacity-10::after {
-  --ns-brd-opacity: 0.1 !important;
+  --ns-border-opacity: 0.1 !important;
 }
 
 .before\:brd-opacity-10::before {
-  --ns-brd-opacity: 0.1 !important;
+  --ns-border-opacity: 0.1 !important;
 }
 
 .brd-opacity-25 {
-  --ns-brd-opacity: 0.25 !important;
+  --ns-border-opacity: 0.25 !important;
 }
 
 .after\:brd-opacity-25::after {
-  --ns-brd-opacity: 0.25 !important;
+  --ns-border-opacity: 0.25 !important;
 }
 
 .before\:brd-opacity-25::before {
-  --ns-brd-opacity: 0.25 !important;
+  --ns-border-opacity: 0.25 !important;
 }
 
 .brd-opacity-50 {
-  --ns-brd-opacity: 0.5 !important;
+  --ns-border-opacity: 0.5 !important;
 }
 
 .after\:brd-opacity-50::after {
-  --ns-brd-opacity: 0.5 !important;
+  --ns-border-opacity: 0.5 !important;
 }
 
 .before\:brd-opacity-50::before {
-  --ns-brd-opacity: 0.5 !important;
+  --ns-border-opacity: 0.5 !important;
 }
 
 .brd-opacity-75 {
-  --ns-brd-opacity: 0.75 !important;
+  --ns-border-opacity: 0.75 !important;
 }
 
 .after\:brd-opacity-75::after {
-  --ns-brd-opacity: 0.75 !important;
+  --ns-border-opacity: 0.75 !important;
 }
 
 .before\:brd-opacity-75::before {
-  --ns-brd-opacity: 0.75 !important;
+  --ns-border-opacity: 0.75 !important;
 }
 
 .brd-opacity-100 {
-  --ns-brd-opacity: 1 !important;
+  --ns-border-opacity: 1 !important;
 }
 
 .after\:brd-opacity-100::after {
-  --ns-brd-opacity: 1 !important;
+  --ns-border-opacity: 1 !important;
 }
 
 .before\:brd-opacity-100::before {
-  --ns-brd-opacity: 1 !important;
+  --ns-border-opacity: 1 !important;
 }
 
 .brd-solid {
