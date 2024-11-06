@@ -11221,6 +11221,38 @@ textarea.form-control-lg {
   border-style: none !important;
 }
 
+.focus-ring-primary {
+  --ns-focus-ring-color: rgba(var(--ns-primary-rgb), var(--ns-focus-ring-opacity));
+}
+
+.focus-ring-secondary {
+  --ns-focus-ring-color: rgba(var(--ns-secondary-rgb), var(--ns-focus-ring-opacity));
+}
+
+.focus-ring-success {
+  --ns-focus-ring-color: rgba(var(--ns-success-rgb), var(--ns-focus-ring-opacity));
+}
+
+.focus-ring-info {
+  --ns-focus-ring-color: rgba(var(--ns-info-rgb), var(--ns-focus-ring-opacity));
+}
+
+.focus-ring-warning {
+  --ns-focus-ring-color: rgba(var(--ns-warning-rgb), var(--ns-focus-ring-opacity));
+}
+
+.focus-ring-danger {
+  --ns-focus-ring-color: rgba(var(--ns-danger-rgb), var(--ns-focus-ring-opacity));
+}
+
+.focus-ring-light {
+  --ns-focus-ring-color: rgba(var(--ns-light-rgb), var(--ns-focus-ring-opacity));
+}
+
+.focus-ring-dark {
+  --ns-focus-ring-color: rgba(var(--ns-dark-rgb), var(--ns-focus-ring-opacity));
+}
+
 .shadow {
   box-shadow: 0 0.5rem 1rem rgba(var(--ns-shadow-color), var(--ns-shadow-opacity, 0.15)) !important;
 }
@@ -11313,34 +11345,6 @@ textarea.form-control-lg {
   opacity: 1 !important;
 }
 
-.blur-sm {
-  filter: blur(4px) !important;
-}
-
-.blur {
-  filter: blur(8px) !important;
-}
-
-.blur-md {
-  filter: blur(12px) !important;
-}
-
-.blur-lg {
-  filter: blur(16px) !important;
-}
-
-.blur-xl {
-  filter: blur(24px) !important;
-}
-
-.blur-2xl {
-  filter: blur(40px) !important;
-}
-
-.blur-3xl {
-  filter: blur(64px) !important;
-}
-
 .backdrop-blur-sm {
   backdrop-filter: blur(4px) !important;
 }
@@ -11367,6 +11371,110 @@ textarea.form-control-lg {
 
 .backdrop-blur-3xl {
   backdrop-filter: blur(64px) !important;
+}
+
+.scale-50 {
+  transform: var(--ns-scale-50, scale(0.5)) !important;
+}
+
+.hover\:scale-50:hover {
+  transform: var(--ns-hover-scale-50, scale(0.5)) !important;
+}
+
+.scale-100 {
+  transform: var(--ns-scale-100, scale(1)) !important;
+}
+
+.hover\:scale-100:hover {
+  transform: var(--ns-hover-scale-100, scale(1)) !important;
+}
+
+.scale-x-50 {
+  transform: var(--ns-scale-x-50, scale(0.5)) !important;
+}
+
+.hover\:scale-x-50:hover {
+  transform: var(--ns-hover-scale-x-50, scale(0.5)) !important;
+}
+
+.scale-x-100 {
+  transform: var(--ns-scale-x-100, scale(1)) !important;
+}
+
+.hover\:scale-x-100:hover {
+  transform: var(--ns-hover-scale-x-100, scale(1)) !important;
+}
+
+.scale-y-50 {
+  transform: var(--ns-scale-y-50, scale(0.5)) !important;
+}
+
+.hover\:scale-y-50:hover {
+  transform: var(--ns-hover-scale-y-50, scale(0.5)) !important;
+}
+
+.scale-y-100 {
+  transform: var(--ns-scale-y-100, scale(1)) !important;
+}
+
+.hover\:scale-y-100:hover {
+  transform: var(--ns-hover-scale-y-100, scale(1)) !important;
+}
+
+.rotate-3 {
+  transform: var(--ns-rotate-3, rotate(3deg)) !important;
+}
+
+.hover\:rotate-3:hover {
+  transform: var(--ns-hover-rotate-3, rotate(3deg)) !important;
+}
+
+.rotate-45 {
+  transform: var(--ns-rotate-45, rotate(45deg)) !important;
+}
+
+.hover\:rotate-45:hover {
+  transform: var(--ns-hover-rotate-45, rotate(45deg)) !important;
+}
+
+.rotate-90 {
+  transform: var(--ns-rotate-90, rotate(90deg)) !important;
+}
+
+.hover\:rotate-90:hover {
+  transform: var(--ns-hover-rotate-90, rotate(90deg)) !important;
+}
+
+.rotate-180 {
+  transform: var(--ns-rotate-180, rotate(180deg)) !important;
+}
+
+.hover\:rotate-180:hover {
+  transform: var(--ns-hover-rotate-180, rotate(180deg)) !important;
+}
+
+.translate-middle {
+  transform: var(--ns-translate-middle, translate(-50%, -50%)) !important;
+}
+
+.hover\:translate-middle:hover {
+  transform: var(--ns-hover-translate-middle, translate(-50%, -50%)) !important;
+}
+
+.translate-x {
+  transform: var(--ns-translate-x, translateX(-50%)) !important;
+}
+
+.hover\:translate-x:hover {
+  transform: var(--ns-hover-translate-x, translateX(-50%)) !important;
+}
+
+.translate-y {
+  transform: var(--ns-translate-y, translateY(-50%)) !important;
+}
+
+.hover\:translate-y:hover {
+  transform: var(--ns-hover-translate-y, translateY(-50%)) !important;
 }
 
 @media (min-width: 576px) {

@@ -1036,6 +1036,12 @@ $utilities: map-merge(
       values: (
         solid: solid, dashed: dashed, dotted: dotted, double: double, hidden: hidden, none: none),
     ),
+    "focus-ring": (
+      css-var: true,
+      css-variable-name: focus-ring-color,
+      class: focus-ring,
+      values: map-loop($theme-colors-rgb, rgba-css-var, "$key", "focus-ring")
+    ),
 
     // utils-effets
     // scss-docs-start utils-shadow
@@ -1068,16 +1074,69 @@ $utilities: map-merge(
 
     // utils-effets
     // scss-docs-start utils-shadow
-    "filter-blur": (
-      class: blur,
-      property: filter,
-      values: (none:  null, sm: blur(4px), null: blur(8px), md: blur(12px), lg: blur(16px), xl: blur(24px), 2xl: blur(40px), 3xl: blur(64px))
-    ),
     "backdrop-blur": (
       class: backdrop-blur,
       property: backdrop-filter,
       values: (
         none:  null, sm: blur(4px), null: blur(8px), md: blur(12px), lg: blur(16px), xl: blur(24px), 2xl: blur(40px), 3xl: blur(64px)),
+    ),
+
+    // utils-transform
+    // scss-docs-start utils-scale
+    "scale": (
+      property: transform,
+      state: hover,
+      addcssVar: map,
+      class: scale,
+      values: (
+        50: scale(.5),
+        100: scale(1),
+      )
+    ),
+    "scale-x": (
+      property: transform,
+      state: hover,
+      addcssVar: map,
+      class: scale-x,
+      values: (
+        50: scale(.5),
+        100: scale(1),
+      )
+    ),
+    "scale-y": (
+      property: transform,
+      state: hover,
+      addcssVar: map,
+      class: scale-y,
+      values: (
+        50: scale(.5),
+        100: scale(1),
+      )
+    ),
+    // scss-docs-end utils-scale
+    // scss-docs-start utils-rotate
+    "rotate": (
+      property: transform,
+      state: hover,
+      addcssVar: map,
+      class: rotate,
+      values: (
+        3: rotate(3deg),
+        45: rotate(45deg),
+        90: rotate(90deg),
+        180: rotate(180deg),
+      )
+    ),
+    "translate": (
+      property: transform,
+      state: hover,
+      addcssVar: map,
+      class: translate,
+      values: (
+        middle: translate(-50%, -50%),
+        x: translateX(-50%),
+        y: translateY(-50%),
+      )
     ),
   ),
   $utilities

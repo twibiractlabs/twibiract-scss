@@ -5,7 +5,7 @@
     <?php  require('ui/components/navbar.php'); ?>
 </header>
 
-<div class="container relative bg-gradient-to-bl from-primary from-50 to-100 from-opacity-50" style="--ns-from-opacity: .35">
+<div class="container relative bg-gradient-to-bl from-primary from-50 to-100 from-opacity-50" style="--ns-from-opacity: .35;">
     <div class="row mt-5 items-center py-3" style="--ns-mt-5: 8.5rem">
         <div class="col-12 md:col-12 lg:col-7 xl:col-7 mx-auto order-2 md:order-1">
             <div class="relative z-10 mx-auto px-5 pt-5 lg:px-5" style="--ns-pt-5: 5rem;">
@@ -84,5 +84,7 @@
         </div>
     </div>
 </div>
+
+
 
 <?php require('ui/design-system/footer.php'); ?>
