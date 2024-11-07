@@ -2,79 +2,112 @@
 // Utilisé pour générer des utilitaires et imprimer des utilitaires
 @mixin generate-utility($utility, $infix: "", $is-rfs-media-query: false) {
   $values: map-get($utility, values);
-
   // Si les valeurs sont une liste ou une chaîne, convertissez-la en une carte
   @if type-of($values) == "string" or type-of(nth($values, 1)) != "list" {
     $values: zip($values, $values);
   }
 
   $values2: map-get($utility, values2);
-
   @if type-of($values2) == "string" or type-of(nth($values2, 1)) != "list" {
     $values2: zip($values2, $values2);
   }
 
   $values3: map-get($utility, values3);
-
   @if type-of($values3) == "string" or type-of(nth($values3, 1)) != "list" {
     $values3: zip($values3, $values3);
   }
 
   $values4: map-get($utility, values4);
-
   @if type-of($values4) == "string" or type-of(nth($values4, 1)) != "list" {
     $values4: zip($values4, $values4);
   }
 
   $values5: map-get($utility, values5);
-
   @if type-of($values5) == "string" or type-of(nth($values5, 1)) != "list" {
     $values5: zip($values5, $values5);
   }
 
+  $values6: map-get($utility, values6);
+  @if type-of($values6) == "string" or type-of(nth($values6, 1)) != "list" {
+    $values6: zip($values6, $values6);
+  }
+
+  $values7: map-get($utility, values7);
+  @if type-of($values7) == "string" or type-of(nth($values7, 1)) != "list" {
+    $values7: zip($values7, $values7);
+  }
+
+  $values8: map-get($utility, values8);
+  @if type-of($values8) == "string" or type-of(nth($values8, 1)) != "list" {
+    $values8: zip($values8, $values8);
+  }
+
+  $values9: map-get($utility, values9);
+  @if type-of($values9) == "string" or type-of(nth($values9, 1)) != "list" {
+    $values9: zip($values9, $values9);
+  }
+
   @each $key, $value in $values {
-
     $properties: map-get($utility, property);
-
-    $properties2: map-get($utility, property2);
-
-    $properties3: map-get($utility, property3);
-
-    $properties4: map-get($utility, property4);
-
-    $properties5: map-get($utility, property5);
-
     // Plusieurs propriétés sont possibles, par exemple avec des marges ou des remplissages verticaux ou horizontaux
     @if type-of($properties) == "string" {
       $properties: append((), $properties);
     }
 
+    $properties2: map-get($utility, property2);
     @if type-of($properties2) == "string" {
       $properties2: append((), $properties2);
     }
 
+    $properties3: map-get($utility, property3);
     @if type-of($properties3) == "string" {
       $properties3: append((), $properties3);
     }
 
+    $properties4: map-get($utility, property4);
     @if type-of($properties4) == "string" {
       $properties4: append((), $properties4);
     }
 
+    $properties5: map-get($utility, property5);
     @if type-of($properties5) == "string" {
       $properties5: append((), $properties5);
+    }
+
+    $properties6: map-get($utility, property6);
+    @if type-of($properties6) == "string" {
+      $properties6: append((), $properties6);
+    }
+
+    $properties7: map-get($utility, property7);
+    @if type-of($properties7) == "string" {
+      $properties7: append((), $properties7);
+    }
+
+    $properties8: map-get($utility, property8);
+    @if type-of($properties8) == "string" {
+      $properties8: append((), $properties8);
+    }
+
+    $properties9: map-get($utility, property9);
+    @if type-of($properties9) == "string" {
+      $properties9: append((), $properties9);
     }
 
     // Utiliser la classe personnalisée si elle est présente
     $property-class: if(map-has-key($utility, class), map-get($utility, class), nth($properties, 1));
     $property-class: if($property-class == null, "", $property-class);
 
-    // Utiliser la classe personnalisée divide
+    // Utiliser la classe personnalisée divide si elle est présente
     $property-divide: if(map-has-key($utility, divide), map-get($utility, divide), " ");
     $property-divide: if($property-divide == true, " > " + " * + *", "");
 
     // Utilisez le nom de variable CSS personnalisé s'il est présent, sinon la valeur par défaut est `class`
-    $css-variable-name: if(map-has-key($utility, css-variable-name), map-get($utility, css-variable-name), map-get($utility, class));
+    $css-variable-name: if(
+      map-has-key($utility, css-variable-name),
+      map-get($utility, css-variable-name),
+      map-get($utility, class)
+    );
 
     // Paramètres d'état pour générer des pseudo-classes
     $state: if(map-has-key($utility, state), map-get($utility, state), ());
@@ -83,9 +116,7 @@
 
     // Ne pas préfixer si la clé de valeur est nulle (par exemple avec la classe shadow)
     // and $infix == ""
-    $property-class-modifier: if(
-      $key, if($property-class == "", "", "-") + $key, ""
-    );
+    $property-class-modifier: if($key, if($property-class == "", "", "-") + $key, "");
 
     @if map-get($utility, rfs) {
       // Inside the media query
@@ -94,20 +125,16 @@
 
         // Do not render anything if fluid and non fluid values are the same
         $value: if($val == rfs-fluid-value($value), null, $val);
-      }
-      @else {
+      } @else {
         $value: rfs-fluid-value($value);
       }
     }
 
-    $is-css-var:      map-get($utility, css-var);
-    $is-local-vars:   map-get($utility, local-vars);
-    $is-css-opac:     map-get($utility, css-opac);
-    $add-css-var-map: map-get($utility, addcssVar);
-    
-    $is-gradientsColors: map-get($utility, gradientsColors);
-    
     $is-rtl: map-get($utility, rtl);
+    $add-css-var-map: map-get($utility, addcssVar);
+    $is-css-var: map-get($utility, css-var);
+    $is-local-vars: map-get($utility, local-vars);
+    $animation: map-get($utility, animation);
 
     @if $value != null {
       @if $is-rtl == false {
@@ -115,157 +142,161 @@
       }
 
       @if $add-css-var-map and $add-css-var-map == map {
-
-        $var-breakpoint: if($infix == "sm\\:", "sm-", if($infix == "md\\:", "md-", if($infix == "lg\\:", "lg-", if($infix == "xl\\:", "xl-", if($infix == "xxl\\:", "xxl-", null)))));
+        $var-breakpoint: if(
+          $infix == "sm\\:",
+          "sm-",
+          if(
+            $infix == "md\\:",
+            "md-",
+            if($infix == "lg\\:", "lg-", if($infix == "xl\\:", "xl-", if($infix == "xxl\\:", "xxl-", null)))
+          )
+        );
 
         .#{ $infix + $property-class + $property-class-modifier}#{$property-divide} {
-
           @each $property in $properties {
-            #{$property}: var(--#{$prefix + $var-breakpoint + $property-class + $property-class-modifier}, $value) if($enable-important-utilities, !important, null);
+            #{$property}: var(--#{$prefix + $var-breakpoint + $property-class + $property-class-modifier}, $value)
+              if($enable-important-utilities, !important, null);
           }
 
-          @each $key2, $value2 in $values2{
+          @each $key2, $value2 in $values2 {
             @each $property2 in $properties2 {
               #{$property2}: $value2 if($enable-important-utilities and $property2, !important, null);
             }
           }
-
         }
 
         @each $pseudo in $state {
-
           $statement: if(#{$pseudo} == "after", ":after", if(#{$pseudo} == "before", ":before", #{$pseudo}));
 
           .#{$infix}#{$pseudo}\:#{ $property-class + $property-class-modifier}:#{$statement}#{$property-divide} {
-
             @each $property in $properties {
-              #{$property}: var(--#{$prefix  + #{$pseudo+"-"} +  $var-breakpoint + $property-class + $property-class-modifier}, $value) if($enable-important-utilities, !important, null);
+              #{$property}: var(
+                  --#{$prefix + #{$pseudo + "-"} + $var-breakpoint + $property-class + $property-class-modifier},
+                  $value
+                )
+                if($enable-important-utilities, !important, null);
             }
-
           }
-
         }
-
       }
 
-      @if $is-css-opac and $is-css-opac == true {
-
-        $values-css-var: map-get($utility, values-css-var);
-
-        // Si les valeurs sont une liste ou une chaîne, convertissez-la en une carte
-        @if type-of($values-css-var) == "string" or type-of(nth($values-css-var, 1)) != "list" {
-          $values-css-var: zip($values-css-var, $values-css-var);
+      @if $is-css-var {
+        .#{ $infix + $property-class + $property-class-modifier}#{$property-divide} {
+          --#{$prefix}#{$css-variable-name}: #{$value};
         }
 
-        @if $values-css-var != null {
-          
-          @each $key-css-var, $value-css-var in $values-css-var {
+        @each $pseudo in $state {
+          $statement: if(#{$pseudo} == "after", ":after", if(#{$pseudo} == "before", ":before", #{$pseudo}));
 
-            .#{ $infix + $property-class + $property-class-modifier}#{if($key-css-var, "\\/#{$key-css-var}", null)}#{$property-divide}{
-
-              @if $is-local-vars {
-                @each $local-var, $variable in $is-local-vars {
-                  --#{$prefix}#{$local-var}: #{$value-css-var};
-                }
-              }
-
-              @each $property in $properties {
-                #{$property}: $value if($enable-important-utilities, !important, null);
-              }
-
-              @each $key2, $value2 in $values2{
-
-                @each $property2 in $properties2 {
-                  #{$property2}: $value2 if($enable-important-utilities and $property2, !important, null);
-                }
-                
-              }
-
-              @each $key3, $value3 in $values3{
-
-                @each $property3 in $properties3 {
-                  #{$property3}: $value3 if($enable-important-utilities and $property3, !important, null);
-                }
-                
-              }
-
-              @each $key4, $value4 in $values4{
-
-                @each $property4 in $properties4 {
-                  #{$property4}: $value4 if($enable-important-utilities and $property4, !important, null);
-                }
-                
-              }
-
-              @each $key5, $value5 in $values5{
-
-                @each $property5 in $properties5 {
-                  #{$property5}: $value5 if($enable-important-utilities and $property5, !important, null);
-                }
-                
-              }
-              
-            }
-
-            @each $pseudo in $state {
-          
-              @if $pseudo == after or $pseudo == before{
-                
-                .#{$infix}#{$pseudo}\:#{ $property-class + $property-class-modifier}#{if($key-css-var, "\\/#{$key-css-var}", null)}::#{$pseudo}#{$property-divide} {
-
-                  @each $property in $properties {
-    
-                    @if $is-local-vars {
-                      @each $local-var, $variable in $is-local-vars {
-                        --#{$prefix}#{$local-var}: #{$value-css-var};
-                      }
-                    }
-        
-                    #{$property}: $value if($enable-important-utilities, !important, null);
-                  }
-
-                }
-              }@else{
-                
-                .#{$infix}#{$pseudo}\:#{ $property-class + $property-class-modifier}#{if($key-css-var, "\\/#{$key-css-var}", null)}:#{$pseudo}#{$property-divide} {
-
-                  @each $property in $properties {
-    
-                    @if $is-local-vars {
-                      @each $local-var, $variable in $is-local-vars {
-                        --#{$prefix}#{$local-var}: #{$value-css-var};
-                      }
-                    }
-        
-                    #{$property}: $value if($enable-important-utilities, !important, null);
-                  }
-
-                }
-              }
-            }
-
-          }
-
-        }
-
-      }@else{
-
-        @if $is-css-var {
-          .#{ $infix + $property-class + $property-class-modifier}#{$property-divide} {
+          .#{$infix}#{$pseudo}\:#{ $property-class + $property-class-modifier}:#{$statement} {
             --#{$prefix}#{$css-variable-name}: #{$value};
           }
-  
-          @each $pseudo in $state {
-            .#{$infix}#{$pseudo}\:#{ $property-class + $property-class-modifier}:#{$pseudo} {
-              --#{$prefix}#{$css-variable-name}: #{$value};
+        }
+      } @else if $animation == keyframes {
+        @if $add-css-var-map !=map {
+          .#{ $infix + $property-class + #{"-" + map-get($utility, name)} } {
+            @each $property in $properties {
+              #{$property}: map-get($utility, name) $value if($enable-important-utilities, !important, null);
+
+              @keyframes #{map-get($utility, name)} {
+                @if map-get($utility, keyframeInit) {
+                  #{map-get($utility, keyframeInit)} {
+                    #{if(map-get($utility, Initproperty1), map-get($utility, Initproperty1), null)}: #{if(
+                        map-get($utility, Initvalue1) and map-get($utility, Initproperty1),
+                        map-get($utility, Initvalue1),
+                        null
+                      )};
+                    #{if(map-get($utility, Initproperty2), map-get($utility, Initproperty2), null)}: #{if(
+                        map-get($utility, Initvalue2) and map-get($utility, Initproperty2),
+                        map-get($utility, Initvalue2),
+                        null
+                      )};
+                  }
+                }
+
+                @if map-get($utility, keyframeLast) {
+                  #{map-get($utility, keyframeLast)} {
+                    #{if(map-get($utility, Lastproperty1), map-get($utility, Lastproperty1), null)}: #{if(
+                        map-get($utility, Lastvalue1) and map-get($utility, Lastproperty1),
+                        map-get($utility, Lastvalue1),
+                        null
+                      )};
+                    #{if(map-get($utility, Lastproperty2), map-get($utility, Lastproperty2), null)}: #{if(
+                        map-get($utility, Lastvalue2) and map-get($utility, Lastproperty2),
+                        map-get($utility, Lastvalue2),
+                        null
+                      )};
+                  }
+                }
+              }
             }
           }
-        } @else {
+        }
+      } @else {
+        @if $add-css-var-map !=map {
+          .#{ $infix + $property-class + $property-class-modifier}#{$property-divide} {
+            @each $property in $properties {
+              @if $is-local-vars {
+                @each $local-var, $variable in $is-local-vars {
+                  --#{$prefix}#{$local-var}: #{$variable};
+                }
+              }
+              #{$property}: $value if($enable-important-utilities, !important, null);
+            }
 
-          @if $add-css-var-map !=map {
+            @each $key2, $value2 in $values2 {
+              @each $property2 in $properties2 {
+                #{$property2}: $value2 if($enable-important-utilities and $property2, !important, null);
+              }
+            }
 
-            .#{ $infix + $property-class + $property-class-modifier}#{$property-divide} {
+            @each $key3, $value3 in $values3 {
+              @each $property3 in $properties3 {
+                #{$property3}: $value3 if($enable-important-utilities and $property3, !important, null);
+              }
+            }
 
+            @each $key4, $value4 in $values4 {
+              @each $property4 in $properties4 {
+                #{$property4}: $value4 if($enable-important-utilities and $property4, !important, null);
+              }
+            }
+
+            @each $key5, $value5 in $values5 {
+              @each $property5 in $properties5 {
+                #{$property5}: $value5 if($enable-important-utilities and $property5, !important, null);
+              }
+            }
+
+            @each $key6, $value6 in $values6 {
+              @each $property6 in $properties6 {
+                #{$property6}: $value6 if($enable-important-utilities and $property6, !important, null);
+              }
+            }
+
+            @each $key7, $value7 in $values7 {
+              @each $property7 in $properties7 {
+                #{$property7}: $value7 if($enable-important-utilities and $property7, !important, null);
+              }
+            }
+
+            @each $key8, $value8 in $values8 {
+              @each $property8 in $properties8 {
+                #{$property8}: $value8 if($enable-important-utilities and $property8, !important, null);
+              }
+            }
+
+            @each $key9, $value9 in $values9 {
+              @each $property9 in $properties9 {
+                #{$property9}: $value9 if($enable-important-utilities and $property9, !important, null);
+              }
+            }
+          }
+
+          @each $pseudo in $state {
+            $statement: if(#{$pseudo} == "after", ":after", if(#{$pseudo} == "before", ":after", #{$pseudo}));
+
+            .#{$infix}#{$pseudo}\:#{ $property-class + $property-class-modifier}:#{$statement}#{$property-divide} {
               @each $property in $properties {
                 @if $is-local-vars {
                   @each $local-var, $variable in $is-local-vars {
@@ -275,145 +306,56 @@
                 #{$property}: $value if($enable-important-utilities, !important, null);
               }
 
-              @each $key2, $value2 in $values2{
+              @each $key2, $value2 in $values2 {
                 @each $property2 in $properties2 {
                   #{$property2}: $value2 if($enable-important-utilities and $property2, !important, null);
                 }
               }
 
-              @each $key3, $value3 in $values3{
+              @each $key3, $value3 in $values3 {
                 @each $property3 in $properties3 {
                   #{$property3}: $value3 if($enable-important-utilities and $property3, !important, null);
                 }
               }
 
-              @each $key4, $value4 in $values4{
+              @each $key4, $value4 in $values4 {
                 @each $property4 in $properties4 {
                   #{$property4}: $value4 if($enable-important-utilities and $property4, !important, null);
                 }
               }
 
-              @each $key5, $value5 in $values5{
+              @each $key5, $value5 in $values5 {
                 @each $property5 in $properties5 {
                   #{$property5}: $value5 if($enable-important-utilities and $property5, !important, null);
                 }
               }
 
-            }
-    
-            @each $pseudo in $state {
-              
-              @if $pseudo == after or $pseudo == before{
-                
-                .#{$infix}#{$pseudo}\:#{ $property-class + $property-class-modifier}::#{$pseudo}#{$property-divide} {
-
-                  @each $property in $properties {
-                    @if $is-local-vars {
-                      @each $local-var, $variable in $is-local-vars {
-                        --#{$prefix}#{$local-var}: #{$variable};
-                      }
-                    }
-                    #{$property}: $value if($enable-important-utilities, !important, null);
-                  }
-
-                  @each $key2, $value2 in $values2{
-
-                    @each $property2 in $properties2 {
-
-                      #{$property2}: $value2 if($enable-important-utilities and $property2, !important, null);
-
-                    }
-                  }
-
-                  @each $key3, $value3 in $values3{
-
-                    @each $property3 in $properties3 {
-
-                      #{$property3}: $value3 if($enable-important-utilities and $property3, !important, null);
-
-                    }
-                  }
-
-                  @each $key4, $value4 in $values4{
-
-                    @each $property4 in $properties4 {
-
-                      #{$property4}: $value4 if($enable-important-utilities and $property4, !important, null);
-
-                    }
-                  }
-
-                  @each $key5, $value5 in $values5{
-
-                    @each $property5 in $properties5 {
-
-                      #{$property5}: $value5 if($enable-important-utilities and $property5, !important, null);
-
-                    }
-                  }
-
-                }
-              }@else{
-                .#{$infix}#{$pseudo}\:#{ $property-class + $property-class-modifier}:#{$pseudo}#{$property-divide} {
-
-                  @each $property in $properties {
-                    @if $is-local-vars {
-                      @each $local-var, $variable in $is-local-vars {
-                        --#{$prefix}#{$local-var}: #{$variable};
-                      }
-                    }
-                    #{$property}: $value if($enable-important-utilities, !important, null);
-                  }
-
-                  @each $key2, $value2 in $values2{
-
-                    @each $property2 in $properties2 {
-
-                      #{$property2}: $value2 if($enable-important-utilities and $property2, !important, null);
-                      
-                    }
-
-                  }
-
-                  @each $key3, $value3 in $values3{
-
-                    @each $property3 in $properties3 {
-
-                      #{$property3}: $value3 if($enable-important-utilities and $property3, !important, null);
-                      
-                    }
-
-                  }
-
-                  @each $key4, $value4 in $values4{
-
-                    @each $property4 in $properties4 {
-
-                      #{$property4}: $value4 if($enable-important-utilities and $property4, !important, null);
-                      
-                    }
-
-                  }
-
-                  @each $key5, $value5 in $values5{
-
-                    @each $property5 in $properties5 {
-
-                      #{$property5}: $value5 if($enable-important-utilities and $property5, !important, null);
-                      
-                    }
-
-                  }
-
+              @each $key6, $value6 in $values6 {
+                @each $property6 in $properties6 {
+                  #{$property6}: $value6 if($enable-important-utilities and $property6, !important, null);
                 }
               }
-    
-            }
 
+              @each $key7, $value7 in $values7 {
+                @each $property7 in $properties7 {
+                  #{$property7}: $value7 if($enable-important-utilities and $property7, !important, null);
+                }
+              }
+
+              @each $key8, $value8 in $values8 {
+                @each $property8 in $properties8 {
+                  #{$property8}: $value8 if($enable-important-utilities and $property8, !important, null);
+                }
+              }
+
+              @each $key9, $value9 in $values9 {
+                @each $property9 in $properties9 {
+                  #{$property9}: $value9 if($enable-important-utilities and $property9, !important, null);
+                }
+              }
+            }
           }
-          
         }
-        
       }
 
       @if $is-rtl == false {
@@ -422,15 +364,11 @@
     }
 
     @if $value == null {
-
       // Bg-gradient colors
-      
-      @if map-has-key($utility, gradientsColors) and map-get($utility, gradientsColors) == true { 
 
+      @if map-has-key($utility, gradientsColors) and map-get($utility, gradientsColors) == true {
         @include gradientsColors();
-
       }
-      
     }
   }
 }

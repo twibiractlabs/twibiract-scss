@@ -2,7 +2,7 @@ $utilities: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
 $utilities: map-merge(
   (
-    // scss-docs-start utlis-Layout
+    // utlis-Layout
     // scss-docs-start utils-box
     "box-decoration": (
       class: box-decoration,
@@ -11,7 +11,7 @@ $utilities: map-merge(
     ),
     "box": (
       class: box,
-      state: after before,
+      state: hover before,
       property: box-sizing,
       values: border content,
     ),
@@ -22,7 +22,7 @@ $utilities: map-merge(
       values: (
         block: block, inline-block: inline-block, inline: inline, flex: flex, inline-flex: inline-flex, table: table, table-row: table-row, grid: grid, inline-grid: inline-grid, none: none
       ),
-      responsive: true,
+      // responsive: true,
       // print: true,
     ),
     // scss-docs-start utils-float
@@ -33,7 +33,7 @@ $utilities: map-merge(
         end: right,
         none: none,
       ),
-      responsive: true,
+      // responsive: true,
     ),
     // scss-docs-end utils-float
     // Object Fit utilities
@@ -74,157 +74,9 @@ $utilities: map-merge(
       class: null,
       state: after before,
       values: (static: static, fixed: fixed, absolute: absolute, relative: relative, sticky: sticky),
-      responsive: true,
+      // responsive: true,
     ),
     // scss-docs-end utils-position
-    // scss-docs-start utils-top-right-bottom-left
-    "top": (
-      property: top,
-      class:  top,
-      addcssVar: map,
-      values: $position-values,
-      responsive: true,
-    ),
-    "bottom": (
-      property: bottom,
-      class:  bottom,
-      addcssVar: map,
-      values: $position-values,
-      responsive: true,
-    ),
-    "start": (
-      property: left,
-      class: left,
-      addcssVar: map,
-      values: $position-values,
-      responsive: true,
-    ),
-    "end": (
-      property: right,
-      class: right,
-      addcssVar: map,
-      values: $position-values,
-      responsive: true,
-    ),
-    // scss-docs-end utils-top-right-bottom-left
-    // scss-docs-start utils-visibility
-    "Visibility": (
-      property: Visibility,
-      class: null,
-      values: (
-        visible: visible, invisible: hidden, Visibility: collapse
-      ),
-    ),
-    // scss-docs-end utils-visibility
-    // scss-docs-start utils-zindex
-    "z-index": (
-      property: z-index,
-      class: z,
-      values: $zindex-levels
-    ),
-    // scss-docs-end utils-zindex
-    // scss-docs-end utlis-Layout
-
-    // scss-docs-start utlis-flebox
-    "flex-direction": (
-      property: flex-direction,
-      class: flex,
-      values: (row: row, row-reverse: row-reverse, col: column, col-reverse: column-reverse),
-      responsive: true,
-    ),
-    "flex-wrap": (
-      property: flex-wrap,
-      class: flex,
-      values: (wrap: wrap, wrap-reverse: wrap-reverse, nowrap: nowrap),
-      responsive: true,
-    ),
-    "flex": (
-      property: flex,
-      class: flex,
-      values: (1: 1 1 0%, auto: 1 1 auto, initial: 0 1 auto, none: none),
-      responsive: true,
-    ),
-    "flex-grow": (
-      property: flex-grow,
-      class: grow,
-      values: (0: 0, null: 1),
-      responsive: true,
-    ),
-    "flex-shrink": (
-      property: flex-shrink,
-      class: shrink,
-      values: (0: 0, null: 1),
-      responsive: true,
-    ),
-    "order": (
-      property: order,
-      values: (
-        1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8, 9: 9, 10: 10, 11: 11, 12: 12, first: -99999, last: 99999, none: 0
-      ),
-      responsive: true,
-    ),    
-    // Gap utility
-    "gap": (
-      property: gap,
-      class: gap,
-      addcssVar: map,
-      values: $spacers,
-      responsive: true,
-    ),
-    "column-gap": (
-      property: column-gap,
-      class: gap-x,
-      addcssVar: map,
-      values: $spacers,
-      responsive: true,
-    ),
-    "row-gap": (
-      property: row-gap,
-      class: gap-y,
-      addcssVar: map,
-      values: $spacers,
-      responsive: true,
-    ),
-    "justify-content": (
-      property: justify-content,
-      class: justify,
-      values: (normal: normal, start: flex-start, end: flex-end, center: center, between: space-between, around: space-around, evenly: space-evenly, stretch: stretch),
-      responsive: true,
-    ),
-    "justify-items": (
-      property: justify-items,
-      class: justify-items,
-      values: (start: start, end: end, center: center, stretch: stretch),
-      responsive: true,
-    ),
-    "justify-self": (
-      property: justify-self,
-      class: justify-self,
-      values: (start: start, end: end, center: center, stretch: stretch, auto: auto),
-      responsive: true,
-    ),    
-    "align-content": (
-      property: align-content,
-      class: content,
-      values: (normal: normal, center: center, start: flex-start, end: flex-end, between: space-between, around: space-around, evenly: space-evenly, baseline: baseline, stretch: stretch,),
-      responsive: true,
-    ),
-    "align-items": (
-      property: align-items,
-      class: items,
-      values: (start: flex-start, end: flex-end, center: center, baseline: baseline, stretch: stretch),
-      responsive: true,
-    ),
-    "align-self": (
-      property: align-self,
-      class: self,
-      values: (auto: auto, start: flex-start, end: flex-end, center: center, stretch: stretch, baseline: baseline),
-      responsive: true,
-    ),
-
-    // scss-docs-end utils-flex
-    // Margin utilities
-    // scss-docs-start utils-spacing[inset, margin, spacers]
     "inset": (
       property: inset,
       class:  inset,
@@ -253,7 +105,7 @@ $utilities: map-merge(
       addcssVar: map,
       state: after before,
       values: $negative-spacers,
-      responsive: true,
+      // responsive: true,
     ),
     "negative-inset-x": (
       property: right left,
@@ -261,7 +113,7 @@ $utilities: map-merge(
       addcssVar: map,
       state: after before,
       values: $negative-spacers,
-      responsive: true,
+      // responsive: true,
     ),
     "negative-inset-y": (
       property: bottom top,
@@ -269,57 +121,203 @@ $utilities: map-merge(
       addcssVar: map,
       state: after before,
       values: $negative-spacers,
-      responsive: true,
+      // responsive: true,
     ),
-    // margin utilities
+    "top": (
+      property: top,
+      class:  top,
+      addcssVar: map,
+      values: $spacers,
+      // responsive: true,
+    ),
+    "bottom": (
+      property: bottom,
+      class:  bottom,
+      addcssVar: map,
+      values: $spacers,
+      // responsive: true,
+    ),
+    "start": (
+      property: left,
+      class: left,
+      addcssVar: map,
+      values: $spacers,
+      // responsive: true,
+    ),
+    "end": (
+      property: right,
+      class: right,
+      addcssVar: map,
+      values: $spacers,
+      // responsive: true,
+    ),
+
+    // scss-docs-start utils-visibility
+    "Visibility": (
+      property: Visibility,
+      class: null,
+      values: (
+        visible: visible, invisible: hidden, Visibility: collapse
+      ),
+    ),
+    // scss-docs-end utils-visibility
+    // scss-docs-start utils-zindex
+    "z-index": (
+      property: z-index,
+      class: z,
+      values: $zindex-levels
+    ),
+    // scss-docs-end utils-zindex
+    // scss-docs-end utlis-Layout
+
+    // scss-docs-start utlis-flebox
+    "flex-direction": (
+      property: flex-direction,
+      class: flex,
+      values: (row: row, row-reverse: row-reverse, col: column, col-reverse: column-reverse),
+      // responsive: true,
+    ),
+    "flex-wrap": (
+      property: flex-wrap,
+      class: flex,
+      values: (wrap: wrap, wrap-reverse: wrap-reverse, nowrap: nowrap),
+      // responsive: true,
+    ),
+    "flex": (
+      property: flex,
+      class: flex,
+      values: (1: 1 1 0%, auto: 1 1 auto, initial: 0 1 auto, none: none),
+      // responsive: true,
+    ),
+    "flex-grow": (
+      property: flex-grow,
+      class: grow,
+      values: (0: 0, null: 1),
+      // responsive: true,
+    ),
+    "flex-shrink": (
+      property: flex-shrink,
+      class: shrink,
+      values: (0: 0, null: 1),
+      // responsive: true,
+    ),
+    "order": (
+      property: order,
+      values: (
+        1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8, 9: 9, 10: 10, 11: 11, 12: 12, first: -99999, last: 99999, none: 0
+      ),
+      // responsive: true,
+    ),    
+    // Gap utility
+    "gap": (
+      property: gap,
+      class: gap,
+      addcssVar: map,
+      values: $spacers,
+      // responsive: true,
+    ),
+    "column-gap": (
+      property: column-gap,
+      class: gap-x,
+      addcssVar: map,
+      values: $spacers,
+      // responsive: true,
+    ),
+    "row-gap": (
+      property: row-gap,
+      class: gap-y,
+      addcssVar: map,
+      values: $spacers,
+      // responsive: true,
+    ),
+    "justify-content": (
+      property: justify-content,
+      class: justify,
+      values: (normal: normal, start: flex-start, end: flex-end, center: center, between: space-between, around: space-around, evenly: space-evenly, stretch: stretch),
+      // responsive: true,
+    ),
+    "justify-items": (
+      property: justify-items,
+      class: justify-items,
+      values: (start: start, end: end, center: center, stretch: stretch),
+      // responsive: true,
+    ),
+    "justify-self": (
+      property: justify-self,
+      class: justify-self,
+      values: (start: start, end: end, center: center, stretch: stretch, auto: auto),
+      // responsive: true,
+    ),    
+    "align-content": (
+      property: align-content,
+      class: content,
+      values: (normal: normal, center: center, start: flex-start, end: flex-end, between: space-between, around: space-around, evenly: space-evenly, baseline: baseline, stretch: stretch,),
+      // responsive: true,
+    ),
+    "align-items": (
+      property: align-items,
+      class: items,
+      values: (start: flex-start, end: flex-end, center: center, baseline: baseline, stretch: stretch),
+      // responsive: true,
+    ),
+    "align-self": (
+      property: align-self,
+      class: self,
+      values: (auto: auto, start: flex-start, end: flex-end, center: center, stretch: stretch, baseline: baseline),
+      // responsive: true,
+    ),
+    // scss-docs-end utils-flex
+    
+    // spacers utilities
+    // utils-margin
     "margin": (
       property: margin,
       class: m,
       addcssVar: map,
       values: map-merge($spacers, (auto: auto)),
-      responsive: true,
+      // responsive: true,
     ),
     "margin-x": (
       property: margin-right margin-left,
       class: mx,
       addcssVar: map,
       values: map-merge($spacers, (auto: auto)),
-      responsive: true,
+      // responsive: true,
     ),
     "margin-y": (
       property: margin-top margin-bottom,
       class: my,
       addcssVar: map,
       values: map-merge($spacers, (auto: auto)),
-      responsive: true,
+      // responsive: true,
     ),
     "margin-top": (
       property: margin-top,
       class: mt,
       addcssVar: map,
       values: map-merge($spacers, (auto: auto)),
-      responsive: true,
+      // responsive: true,
     ),
     "margin-right": (
       property: margin-right,
       class: mr,
       addcssVar: map,
       values: map-merge($spacers, (auto: auto)),
-      responsive: true,
+      // responsive: true,
     ),
     "margin-bottom": (
       property: margin-bottom,
       class: mb,
       addcssVar: map,
       values: map-merge($spacers, (auto: auto)),
-      responsive: true,
+      // responsive: true,
     ),
     "margin-left": (
       property: margin-left,
       class: ml,
       addcssVar: map,
       values: map-merge($spacers, (auto: auto)),
-      responsive: true,
+      // responsive: true,
     ),
     // Negative margin utilities
     "negative-margin": (
@@ -327,49 +325,49 @@ $utilities: map-merge(
       class: m,
       addcssVar: map,
       values: map-merge($negative-spacers, (auto: auto)),
-      responsive: true,
+      // responsive: true,
     ),
     "negative-margin-x": (
       property: margin-right margin-left,
       class: mx,
       addcssVar: map,
       values: map-merge($negative-spacers, (auto: auto)),
-      responsive: true,
+      // responsive: true,
     ),
     "negative-margin-y": (
       property: margin-top margin-bottom,
       class: my,
       addcssVar: map,
       values: map-merge($negative-spacers, (auto: auto)),
-      responsive: true,
+      // responsive: true,
     ),
     "negative-margin-top": (
       property: margin-top,
       class: mt,
       addcssVar: map,
       values: map-merge($negative-spacers, (auto: auto)),
-      responsive: true,
+      // responsive: true,
     ),
     "negative-margin-end": (
       property: margin-right,
       class: mr,
       addcssVar: map,
       values: map-merge($negative-spacers, (auto: auto)),
-      responsive: true,
+      // responsive: true,
     ),
     "negative-margin-bottom": (
       property: margin-bottom,
       class: mb,
       addcssVar: map,
       values: map-merge($negative-spacers, (auto: auto)),
-      responsive: true,
+      // responsive: true,
     ),
     "negative-margin-start": (
       property: margin-left,
       class: ml,
       addcssVar: map,
       values: map-merge($negative-spacers, (auto: auto)),
-      responsive: true,
+      // responsive: true,
     ),
     // Padding utilities
     "padding": (
@@ -377,49 +375,49 @@ $utilities: map-merge(
       class: p,
       addcssVar: map,
       values: $spacers,
-      responsive: true,
+      // responsive: true,
     ),
     "padding-x": (
       property: padding-right padding-left,
       class: px,
       addcssVar: map,
       values: $spacers,
-      responsive: true,
+      // responsive: true,
     ),
     "padding-y": (
       property: padding-top padding-bottom,
       class: py,
       addcssVar: map,
       values: $spacers,
-      responsive: true,
+      // responsive: true,
     ),
     "padding-top": (
       property: padding-top,
       class: pt,
       addcssVar: map,
       values: $spacers,
-      responsive: true,
+      // responsive: true,
     ),
     "padding-right": (
       property: padding-right,
       class: pr,
       addcssVar: map,
       values: $spacers,
-      responsive: true,
+      // responsive: true,
     ),
     "padding-bottom": (
       property: padding-bottom,
       class: pb,
       addcssVar: map,
       values: $spacers,
-      responsive: true,
+      // responsive: true,
     ),
     "padding-left": (
       property: padding-left,
       class: pl,
       addcssVar: map,
       values: $spacers,
-      responsive: true,
+      // responsive: true,
     ),
 
     // width-height utilities
@@ -431,13 +429,13 @@ $utilities: map-merge(
       values: map-merge-multiple(
         (auto: auto), $spacers, $position-values
       ),
-      responsive: true,
+      // responsive: true,
     ),
     "width-content": (
       property: width,
       class: w,
       values: (screen: 100vw, svw: 100svw, lvw: 100lvw, dvw: 100dvw, min: min-content, max: max-content, fit: fit-content),
-      responsive: true,
+      // responsive: true,
     ),
     "max-width": (
       property: max-width,
@@ -456,7 +454,7 @@ $utilities: map-merge(
       values: map-merge-multiple(
         (auto: auto), $spacers, $position-values
       ),
-      responsive: true,
+      // responsive: true,
     ),
     "height-content": (
       property: height,
@@ -480,7 +478,7 @@ $utilities: map-merge(
       values: map-merge(
         $spacers, $position-values,
       ),
-      responsive: true,
+      // responsive: true,
     ),
 
     // Typography
@@ -495,91 +493,91 @@ $utilities: map-merge(
       addcssVar: map,
       property:  font-size, values: (xs: $spacer * .75,), 
       property2: line-height, values2: $spacer,
-      responsive: true,
+      // responsive: true,
     ),
     "text-sm": (
       class: text,
       addcssVar: map,
       property:  font-size, values: (sm: $spacer * .875,), 
       property2: line-height, values2: $spacer * 1.25,
-      responsive: true,
+      // responsive: true,
     ),
     "text-base": (
       class: text,
       addcssVar: map,
       property:  font-size, values: (base: $spacer), 
       property2: line-height, values2: $spacer * 1.5,
-      responsive: true,
+      // responsive: true,
     ),
     "text-lg": (
       class: text,
       addcssVar: map,
       property:  font-size, values: (lg: $spacer * 1.125), 
       property2: line-height, values2: $spacer * 1.75,
-      responsive: true,
+      // responsive: true,
     ),
     "text-xl": (
       class: text,
       addcssVar: map,
       property:  font-size, values: (xl: $spacer * 1.25), 
       property2: line-height, values2: $spacer * 1.75,
-      responsive: true,
+      // responsive: true,
     ),
     "text-2xl": (
       class: text,
       addcssVar: map,
       property:  font-size, values: (2xl: $spacer * 1.5), 
       property2: line-height, values2: $spacer * 2,
-      responsive: true,
+      // responsive: true,
     ),
     "text-3xl": (
       class: text,
       addcssVar: map,
       property:  font-size, values: (3xl: $spacer * 1.875), 
       property2: line-height, values2: $spacer * 2.25,
-      responsive: true,
+      // responsive: true,
     ),
     "text-4xl": (
       class: text,
       addcssVar: map,
       property:  font-size, values: (4xl: $spacer * 2.25), 
       property2: line-height, values2: $spacer * 2.5,
-      responsive: true,
+      // responsive: true,
     ),
     "text-5xl": (
       class: text,
       addcssVar: map,
       property:  font-size, values: (5xl: $spacer * 3), 
       property2: line-height, values2: $spacer * 1,
-      responsive: true,
+      // responsive: true,
     ),
     "text-6xl": (
       class: text,
       addcssVar: map,
       property:  font-size, values: (6xl: $spacer * 3.75), 
       property2: line-height, values2: $spacer * 1,
-      responsive: true,
+      // responsive: true,
     ),
     "text-7xl": (
       class: text,
       addcssVar: map,
       property:  font-size, values: (7xl: $spacer * 4.5), 
       property2: line-height, values2: $spacer * 1,
-      responsive: true,
+      // responsive: true,
     ),
     "text-8xl": (
       class: text,
       addcssVar: map,
       property:  font-size, values: (8xl: $spacer * 6), 
       property2: line-height, values2: $spacer * 1,
-      responsive: true,
+      // responsive: true,
     ),
     "text-9xl": (
       class: text,
       addcssVar: map,
       property:  font-size, values: (9xl: $spacer * 8), 
       property2: line-height, values2: $spacer * 1,
-      responsive: true,
+      // responsive: true,
     ),
     "antialiased": (
       class: antialiased,
@@ -626,7 +624,7 @@ $utilities: map-merge(
       values: (
       left: left, center: center, right: right, justify: justify, start: start, end: end,
       ),
-      responsive: true,
+      // responsive: true,
     ),
     "color": (
       property: color,
@@ -676,10 +674,10 @@ $utilities: map-merge(
       )
     ),
     "link-underline-opacity": (
-      css-var: true,
-      class: decoracity,
+      property: --#{$prefix}link-underline-opacity,
+      class: decoration,
       state: hover,
-      values: (10: .1, 25: .25, 50: .5, 75: .75, 100: 1),
+      values: (10: .1, 25: .25, 50: .5, 75: .75, 100: 1)
     ),
     "link-underline-style": (
       property: text-decoration-style,
@@ -1081,63 +1079,529 @@ $utilities: map-merge(
         none:  null, sm: blur(4px), null: blur(8px), md: blur(12px), lg: blur(16px), xl: blur(24px), 2xl: blur(40px), 3xl: blur(64px)),
     ),
 
+    // utils-animations
+    // scss-docs-start animation-none
+    "animation-none": (
+      property: animation,
+      class: animation,
+      values: none
+    ),
+    // scss-docs-start animation-spin
+    "animation-spin": (
+      animation: keyframes,
+      name: spin,
+      class:     animation,
+      property:  animation,
+      values: #{1s linear infinite},
+      keyframeInit:  from,
+      Initproperty1: transform,
+      Initvalue1: rotate(0deg),
+      keyframeLast:  to,
+      Lastproperty1: transform,
+      Lastvalue1: rotate(360deg),
+    ),
+    // scss-docs-start animation-ping
+    "animation-ping": (
+      animation: keyframes,
+      name: ping,
+      class:     animation,
+      property:  animation,
+      values: #{1s cubic-bezier(0, 0, 0.2, 1) infinite},
+      keyframeInit:  #{75%, 100%},
+      Initproperty1: transform,
+      Initvalue1: scale(2),
+      Initproperty2: opacity,
+      Initvalue2: 0,
+    ),
+    // scss-docs-start animation-pulse
+    "animation-pulse": (
+      animation: keyframes,
+      name: pulse,
+      class:     animation,
+      property:  animation,
+      values: #{2s cubic-bezier(0.4, 0, 0.6, 1) infinite},
+      keyframeInit:  #{0%, 100%},
+      Initproperty1: opacity,
+      Initvalue1: var(--#{$prefix}pulse-from, 1),
+      keyframeLast:  #{50%},
+      Lastproperty1: opacity,
+      Lastvalue1: var(--#{$prefix}pulse-to, .5),
+    ),
+    // scss-docs-start animation-bounce
+    "animation-bounce": (
+      animation: keyframes,
+      name: bounce,
+      class:     animation,
+      property:  animation,
+      values: #{1s infinite},
+      keyframeInit:  #{0%, 100%},
+      Initproperty1: transform,
+      Initvalue1: translateY(-25%),
+      Initproperty2: animation-timing-function,
+      Initvalue2: cubic-bezier(0.8, 0, 1, 1),
+      
+      keyframeLast:  #{50%},
+      Lastproperty1: transform,
+      Lastvalue1: translateY(0),
+      Lastproperty2: animation-timing-function,
+      Lastvalue2: cubic-bezier(0, 0, 0.2, 1),
+    ),
+
+    // utils-transitions
+    // scss-docs-start utils-transition-property
+    "transition-property": (
+      property: transition-property,
+      // state: hover,
+      addcssVar: map,
+      class: transition,
+      values: none
+    ),
+    "transition-all": (
+      class: transition,
+      // state: hover,
+      property: transition-property,
+      values: all,
+      property2: transition-timing-function,
+      values2: cubic-bezier(0.4, 0, 0.2, 1),
+      property3: transition-duration,
+      values3: 150ms,
+    ),
+    "transition": (
+      class: transition,
+      // state: hover,
+      property: transition-property,
+      values: (
+        null: #{"color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter"}
+      ),
+      property2: transition-timing-function,
+      values2: cubic-bezier(0.4, 0, 0.2, 1),
+      property3: transition-duration,
+      values3: 150ms,
+    ),
+    "transition-colors": (
+      class: transition-colors,
+      // state: hover,
+      property: transition-property,
+      values: (
+        null: #{"color, background-color, border-color, text-decoration-color, fill, stroke"}
+      ),
+      property2: transition-timing-function,
+      values2: cubic-bezier(0.4, 0, 0.2, 1),
+      property3: transition-duration,
+      values3: 150ms,
+    ),
+    "transition-opacity": (
+      class: transition,
+      // state: hover,
+      property: transition-property,
+      values: opacity,
+      property2: transition-timing-function,
+      values2: cubic-bezier(0.4, 0, 0.2, 1),
+      property3: transition-duration,
+      values3: 150ms,
+    ),
+    "transition-box-shadow": (
+      class: transition,
+      // state: hover,
+      property: transition-property,
+      values: (shadow: box-shadow),
+      property2: transition-timing-function,
+      values2: cubic-bezier(0.4, 0, 0.2, 1),
+      property3: transition-duration,
+      values3: 150ms,
+    ),
+    "transition-transform": (
+      class: transform,
+      // state: hover,
+      property: transform,
+      values: (shadow: box-shadow),
+      property2: transition-timing-function,
+      values2: cubic-bezier(0.4, 0, 0.2, 1),
+      property3: transition-duration,
+      values3: 150ms,
+    ),
+    // scss-docs-start transition-duration
+    "transition-duration": (
+      property: transition-duration,
+      // state: hover,
+      addcssVar: map,
+      class: duration,
+      values: (100: 100ms)
+    ),
+    // scss-docs-start transition-timing-function
+    "transition-timing-function": (
+      property: transition-timing-function,
+      // state: hover,
+      addcssVar: map,
+      class: null,
+      values: (
+        ease-linear: linear, ease-in: cubic-bezier(0.4, 0, 1, 1), ease-out: cubic-bezier(0, 0, 0.2, 1), ease-in-out: cubic-bezier(0.4, 0, 0.2, 1),
+      )
+    ),
+    // scss-docs-start transition-delay
+    "transition-delay": (
+      property: transition-delay,
+      // state: hover,
+      addcssVar: map,
+      class: delay,
+      values: (100: 100ms)
+    ),
+    
     // utils-transform
     // scss-docs-start utils-scale
     "scale": (
       property: transform,
-      state: hover,
+      // state: hover,
       addcssVar: map,
       class: scale,
       values: (
-        50: scale(.5),
         100: scale(1),
       )
     ),
     "scale-x": (
       property: transform,
-      state: hover,
+      // state: hover,
       addcssVar: map,
       class: scale-x,
       values: (
-        50: scale(.5),
         100: scale(1),
       )
     ),
     "scale-y": (
       property: transform,
-      state: hover,
+      // state: hover,
       addcssVar: map,
       class: scale-y,
       values: (
-        50: scale(.5),
         100: scale(1),
       )
     ),
     // scss-docs-end utils-scale
-    // scss-docs-start utils-rotate
+    // scss-docs-start transform-rotate
     "rotate": (
       property: transform,
-      state: hover,
+      // state: hover,
       addcssVar: map,
       class: rotate,
       values: (
-        3: rotate(3deg),
-        45: rotate(45deg),
-        90: rotate(90deg),
-        180: rotate(180deg),
+        1: rotate(1deg),
+      )
+    ),
+    // scss-docs-end transform-rotate
+    // scss-docs-start transform-translate
+    "translate-x": (
+      property: transform,
+      // state: hover,
+      addcssVar: map,
+      class: translate-x,
+      values: (
+        1: translateX(1px),
+      )
+    ),
+    
+    "translate-y": (
+      property: transform,
+      // state: hover,
+      addcssVar: map,
+      class: translate-y,
+      values: (
+        1: translateY(1px),
       )
     ),
     "translate": (
       property: transform,
-      state: hover,
+      // state: hover,
       addcssVar: map,
       class: translate,
       values: (
         middle: translate(-50%, -50%),
-        x: translateX(-50%),
-        y: translateY(-50%),
       )
     ),
+    // scss-docs-end transform-translate
+    // scss-docs-start transform-skew
+    "skew": (
+      property: transform,
+      // state: hover,
+      addcssVar: map,
+      class: skew,
+      values: (
+        1: skew(1deg),
+      )
+    ),
+    // scss-docs-end transform-skew
+    // scss-docs-start transform-skew-x
+    "skew-x": (
+      property: transform,
+      // state: hover,
+      addcssVar: map,
+      class: skew-x,
+      values: (
+        1: skewX(1deg),
+      )
+    ),
+    // scss-docs-end transform-skew-x
+    // scss-docs-start transform-skew-y
+    "skew-y": (
+      property: transform,
+      // state: hover,
+      addcssVar: map,
+      class: skew-y,
+      values: (
+        1: skewY(1deg),
+      )
+    ),
+    // scss-docs-end transform-skew-y
+    // scss-docs-start transform-origine
+    "transform-origin": (
+      property: transform-origin,
+      class: origin,
+      addcssVar: map,
+      values: (
+        center: center, top: top, top-right: top right, right: right, bottom-right: bottom right, bottom: bottom, bottom-left: bottom left, left: left, top-left: top left,
+      ),
+    ),
+    // scss-docs-end transform-origine
+
+    // utils-Interactivity
+    // scss-docs-start accent-color
+    "accent-color": (
+      property: accent-color,
+      // state: focus,
+      class: accent,
+      addcssVar: map,
+      values: $theme-colors,
+    ),
+    // scss-docs-start appearance
+    "appearance": (
+      property: appearance,
+      class: appearance,
+      values: none auto,
+    ),
+    // scss-docs-start cursor
+    "cursor": (
+      property: cursor,
+      addcssVar: map,
+      class: cursor,
+      values: (
+        pointer: pointer,
+        text: text,
+      ),
+    ),
+    // scss-docs-start pointer-events
+    "pointer-events": (
+      property: pointer-events,
+      class: pointer-events,
+      values: none auto,
+    ),
+    // scss-docs-start resize
+    "resize": (
+      property: resize,
+      class: resize,
+      values: (
+        none: none, y: vertical, x: horizontal, null: horizontal,
+      ),
+    ),
+    // scss-docs-start scroll-behavior
+    "scroll-behavior": (
+      property: scroll-behavior,
+      class: scroll,
+      values: (
+        none: none, smooth: smooth,
+      ),
+    ),
+    // scss-docs-start scroll-margin
+    "scroll-margin": (
+      property: scroll-margin,
+      class: scroll-m,
+      addcssVar: map,
+      values: (
+        sm: 0.25,
+      ),
+    ),
+    "scroll-margin-x": (
+      property: scroll-margin-left scroll-margin-right,
+      class: scroll-mx,
+      addcssVar: map,
+      values: (
+        sm: 0.25,
+      ),
+    ),
+    "scroll-margin-y": (
+      property: scroll-margin-top scroll-margin-bottom,
+      class: scroll-my,
+      addcssVar: map,
+      values: (
+        sm: 0.25,
+      ),
+    ),
+    "scroll-margin-top": (
+      property: scroll-margin-top,
+      class: scroll-mt,
+      addcssVar: map,
+      values: (
+        sm: 0.25,
+      ),
+    ),
+    "scroll-margin-right": (
+      property: scroll-margin-right,
+      class: scroll-mr,
+      addcssVar: map,
+      values: (
+        sm: 0.25,
+      ),
+    ),
+    "scroll-margin-bottom": (
+      property: scroll-margin-bottom,
+      class: scroll-mb,
+      addcssVar: map,
+      values: (
+        sm: 0.25,
+      ),
+    ),
+    "scroll-margin-left": (
+      property: scroll-margin-left,
+      class: scroll-ml,
+      addcssVar: map,
+      values: (
+        sm: 0.25,
+      ),
+    ),
+    // scss-docs-start scroll-padding
+    "scroll-padding": (
+      property: scroll-padding,
+      class: scroll-p,
+      addcssVar: map,
+      values: (
+        sm: 0.25,
+      ),
+    ),
+    "scroll-padding-x": (
+      property: scroll-padding-left scroll-padding-right,
+      class: scroll-px,
+      addcssVar: map,
+      values: (
+        sm: 0.25,
+      ),
+    ),
+    "scroll-padding-y": (
+      property: scroll-padding-top scroll-padding-bottom,
+      class: scroll-py,
+      addcssVar: map,
+      values: (
+        sm: 0.25,
+      ),
+    ),
+    "scroll-padding-top": (
+      property: scroll-padding-top,
+      class: scroll-pt,
+      addcssVar: map,
+      values: (
+        sm: 0.25,
+      ),
+    ),
+    "scroll-padding-right": (
+      property: scroll-padding-right,
+      class: scroll-pr,
+      addcssVar: map,
+      values: (
+        sm: 0.25,
+      ),
+    ),
+    "scroll-padding-bottom": (
+      property: scroll-padding-bottom,
+      class: scroll-pb,
+      addcssVar: map,
+      values: (
+        sm: 0.25,
+      ),
+    ),
+    "scroll-padding-left": (
+      property: scroll-padding-left,
+      class: scroll-pl,
+      addcssVar: map,
+      values: (
+        sm: 0.25,
+      ),
+    ),
+    // scss-docs-start scroll-snap-align
+    "scroll-snap-align": (
+      property: scroll-snap-align,
+      class: snap,
+      values: (
+        start: start,
+        end: end,
+        center: center,
+        align-none: none,
+      ),
+    ),
+    // scss-docs-start scroll-snap-stop
+    "scroll-snap-stop": (
+      property: scroll-snap-stop,
+      class: snap,
+      values: (
+        normal: normal,
+        always: always,
+      ),
+    ),
+    // scss-docs-start scroll-snap-type
+    "scroll-snap-type": (
+      property: scroll-snap-type,
+      class: snap,
+      values: (
+        none: none,
+        x: x var(--#{$prefix}scroll-snap-strictness),
+        y: y var(--#{$prefix}scroll-snap-strictness),
+        both: both var(--#{$prefix}scroll-snap-strictness),
+        mandatory: var(--#{$prefix}scroll-snap-strictness, mandatory),
+        proximity: var(--#{$prefix}scroll-snap-strictness, proximity),
+      ),
+    ),
+    // scss-docs-start touch-action
+    "touch-action": (
+      property: touch-action,
+      class: touch,
+      values: (
+        auto: auto, none: none, pan-x: pan-x, pan-left: pan-left, pan-right: pan-right, pan-y: pan-y, pan-up: pan-up, pan-down: pan-down, pinch-zoom: pinch-zoom, manipulation: manipulation,
+      ),
+    ),
+    // scss-docs-start user-select
+    "user-select": (
+      property: user-select,
+      class: select,
+      values: (
+        none: none,
+        text: text,
+      ),
+    ),
+
+    // utils-SVG
+    // scss-docs-start fill
+    "fill": (
+      property: fill,
+      // state: hover,
+      class: fill,
+      addcssVar: map,
+      values: $theme-colors,
+    ),
+    // scss-docs-end fill
+    // scss-docs-start stroke
+    "stroke": (
+      property: stroke,
+      // state: hover,
+      class: stroke,
+      addcssVar: map,
+      values: $theme-colors,
+    ),
+    // scss-docs-end stroke
+    // scss-docs-start stroke-width
+    "stroke-width": (
+      property: stroke-width,
+      // state: hover,
+      addcssVar: map,
+      class: stroke,
+      values: 1 2,
+    ),
+    // scss-docs-end stroke-width
   ),
   $utilities
 );
